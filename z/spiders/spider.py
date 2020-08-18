@@ -14,11 +14,23 @@ class RootSpider(scrapy.Spider):
   name = "root"
   search_url = 'https://www.zillow.com/homes/{}_rb/'
   root_url = 'https://www.zillow.com/homes{}'
-  results = []
+  listings = []
+  errors = []
+
+  def save_errors(self):
+    for error in self.errors:
+      Operations.SaveError(error)
+
+  def save_listings(self):
+    for listing in self.listings:
+      Operations.SaveListing(listing)
+
+    self.listings = []
+
 
   def start_requests(self):
     start_urls = [self.search_url.format(zip.Value) for zip in Operations.QueryZIP()]
-    for url in start_urls[0:1]:
+    for url in start_urls[0:10]:
       yield scrapy.Request(url=url,
         callback=self.parse_urls,
         errback=self.errbacktest,
@@ -31,27 +43,36 @@ class RootSpider(scrapy.Spider):
 
     urls = response.xpath("//a[@class='list-card-link']/@href").extract()
 
-    for url in urls[0:10]:
-      yield scrapy.Request(url,
-        callback=self.parse_listing,
-        errback=self.errbacktest)
-    '''
-    # if there is a next page, scrape it
-    next_page_enabled = response.xpath("//a[@rel='next']/@disabled").extract_first() == None
-    if next_page_enabled:
-      url = response.xpath("//a[@rel='next']/@href").extract_first()
-      yield response.follow(url,
-        callback=self.parse_urls,
-        errback=self.errbacktest,
-        meta={'root': response.meta.get('root')})
-    '''
+    if len(self.errors) < 10:
+      for url in urls:
+        yield scrapy.Request(url,
+          callback=self.parse_listing,
+          errback=self.errbacktest)
+
+      # if there is a next page, scrape it
+      next_page_enabled = response.xpath("//a[@rel='next']/@disabled").extract_first() == None
+      if next_page_enabled:
+        url = response.xpath("//a[@rel='next']/@href").extract_first()
+        yield response.follow(url,
+          callback=self.parse_urls,
+          errback=self.errbacktest,
+          meta={'root': response.meta.get('root')})
+
 
   def parse_listing(self, response):
     if response.status != 200:
       print(response.text)
       return
 
-    self.get_fields(response)
+    try:
+      self.get_fields(response)
+
+    except Exception as e:
+      error = {}
+      error['url'] = response.url
+      error['error'] = str(e)
+
+      self.errors.append(error)
 
   def errbacktest(self, failiure):
     pass
@@ -63,11 +84,11 @@ class RootSpider(scrapy.Spider):
     return spider
 
   def spider_closed(self, spider):
-    for listing in self.results:
-      Operations.SaveListing(listing)
+    self.save_listings()
+    self.save_errors()
 
   def get_fields(self, response):
-    print(len(self.results))
+    print(len(self.listings))
     result = {}
 
     result['_id'] = re.search(r'(.*?)_zpid', response.url).group(1).split('/')[-1]
@@ -134,4 +155,4 @@ class RootSpider(scrapy.Spider):
     result['last_sale_price'] = last_sale_price
     result['last_sale_sell_date'] = datetime.fromtimestamp(last_sale_sell_date/1000) if last_sale_sell_date != None else None
 
-    self.results.append(result)
+    self.listings.append(result)

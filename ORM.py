@@ -1,7 +1,7 @@
 import os
 import json
 from datetime import datetime
-from sqlalchemy import ForeignKey, desc, create_engine, func, Column, BigInteger, Integer, Float, String, Boolean, DateTime, Text
+from sqlalchemy import ForeignKey, desc, create_engine, func, Column, BigInteger, Integer, Float, String, Boolean, DateTime, Text, JSON
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 from pprint import pprint
@@ -21,6 +21,15 @@ def safe_int_cast(value, tracer, listing):
   except Exception as e:
     print("{}: {}: {}: {}".format(value, tracer, listing, e))
     return None
+
+class Error(Base):
+  __tablename__ = 'error'
+
+  Id = Column('id', Integer, primary_key=True)
+  Error = Column('error', JSON)
+
+  def __init__(self, data):
+    self.Error = data
 
 class ZIP(Base):
   __tablename__ = 'zip'
@@ -145,6 +154,9 @@ class Operations:
       session.add(Listing(data))
       session.commit()
 
+  def SaveError(data):
+    session.add(Error(data))
+    session.commit()
 
   def init_db():
     zip_codes = [ZIP(zip_code) for zip_code in read_file('zipcodes.txt')]
