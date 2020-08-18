@@ -35,7 +35,7 @@ class RootSpider(scrapy.Spider):
       yield scrapy.Request(url,
         callback=self.parse_listing,
         errback=self.errbacktest)
-
+    '''
     # if there is a next page, scrape it
     next_page_enabled = response.xpath("//a[@rel='next']/@disabled").extract_first() == None
     if next_page_enabled:
@@ -44,7 +44,7 @@ class RootSpider(scrapy.Spider):
         callback=self.parse_urls,
         errback=self.errbacktest,
         meta={'root': response.meta.get('root')})
-
+    '''
 
   def parse_listing(self, response):
     if response.status != 200:
@@ -78,8 +78,8 @@ class RootSpider(scrapy.Spider):
 
     result['z_estimate'] = response.xpath("//span[contains(text(), 'Zestimate')]/sup[contains(text(), '®')]")[0].xpath("../../../span/text()")[0].extract().replace("$",'').replace(',','')
     result['time_on_zillow'] = response.xpath("//div[contains(text(), 'Time on Zillow')]/following-sibling::*[1]/text()").extract_first().replace(' days', '')
-    result['views'] = response.xpath("//button[contains(text(), 'Views')]/../following-sibling::*[1]/text()").extract_first().replace(',','')
-    result['saves'] = response.xpath("//button[contains(text(), 'Saves')]/../following-sibling::*[1]/text()").extract_first()
+    result['views'] = response.xpath("//button[contains(text(), 'Views')]/../following-sibling::*[1]/text()").extract_first(0).replace(',','')
+    result['saves'] = response.xpath("//button[contains(text(), 'Saves')]/../following-sibling::*[1]/text()").extract_first(0)
 
     result['_type'] = response.xpath("//span[contains(text(), 'Type:')]/following-sibling::*[1]/text()").extract_first()
 
