@@ -81,49 +81,49 @@ class Listing(Base):
 
 
   def __init__(self, data):
-    Id = data['_id']
-    Appliances = data['appliances']
-    Cooling = data['cooling']
-    Cooling = data['cooling']
-    Fireplace = data['fireplace']
-    Flooring = data['flooring']
-    GreatSchoolsRating = data['great_schools_rating']
-    Heating = data['heating']
-    Heating = data['heating']
-    HomeAddress = data['home_address']
-    HomeType = data['home_type']
-    LastSaleSellDate = data['last_sale_sell_date']
-    LotSize = data['lot_size']
-    Neighborhood = data['neighborhood']
-    ParkingFeatures = data['parking_features']
-    PropertyType = data['_type']
-    Roof = data['roof']
-    ScrapeDate = data['scrape_date']
-    ViewDescription = data['view_description']
-    ZillowUrl = data['zillow_url']
+    self.Id = data['_id']
+    self.Appliances = data['appliances']
+    self.Cooling = data['cooling']
+    self.Cooling = data['cooling']
+    self.Fireplace = data['fireplace']
+    self.Flooring = data['flooring']
+    self.GreatSchoolsRating = data['great_schools_rating']
+    self.Heating = data['heating']
+    self.Heating = data['heating']
+    self.HomeAddress = data['home_address']
+    self.HomeType = data['home_type']
+    self.LastSaleSellDate = data['last_sale_sell_date']
+    self.LotSize = data['lot_size']
+    self.Neighborhood = data['neighborhood']
+    self.ParkingFeatures = data['parking_features']
+    self.PropertyType = data['_type']
+    self.Roof = data['roof']
+    self.ScrapeDate = data['scrape_date']
+    self.ViewDescription = data['view_description']
+    self.ZillowUrl = data['zillow_url']
 
-    NewConstruction = data['new_construction']
-    OnWaterfront = data['on_waterfront']
-    Spa = data['spa']
+    self.NewConstruction = data['new_construction']
+    self.OnWaterfront = data['on_waterfront']
+    self.Spa = data['spa']
 
-    Bathrooms = safe_int_cast(data['bathrooms'], 'bathrooms', self.Id)
-    Bedrooms = safe_int_cast(data['bedrooms'], 'bedrooms', self.Id)
-    FullBathrooms = safe_int_cast(data['full_bathrooms'], 'full_bathrooms', self.Id)
-    HalfBathrooms = safe_int_cast(data['1_2_bathrooms'], '1_2_bathrooms', self.Id)
-    QuarterBathrooms = safe_int_cast(data['1_4_bathrooms'], '1_4_bathrooms', self.Id)
-    ThreeQuarterBathrooms = safe_int_cast(data['3_4_bathrooms'], '3_4_bathrooms', self.Id)
+    self.Bathrooms = safe_int_cast(data['bathrooms'], 'bathrooms', self.Id)
+    self.Bedrooms = safe_int_cast(data['bedrooms'], 'bedrooms', self.Id)
+    self.FullBathrooms = safe_int_cast(data['full_bathrooms'], 'full_bathrooms', self.Id)
+    self.HalfBathrooms = safe_int_cast(data['1_2_bathrooms'], '1_2_bathrooms', self.Id)
+    self.QuarterBathrooms = safe_int_cast(data['1_4_bathrooms'], '1_4_bathrooms', self.Id)
+    self.ThreeQuarterBathrooms = safe_int_cast(data['3_4_bathrooms'], '3_4_bathrooms', self.Id)
 
-    GarageSpaces = safe_int_cast(data['garage_spaces'], 'garage_spaces', self.Id)
-    LastSalePrice = data['last_sale_price']
-    ListedPrice = safe_int_cast(data['listed_price'], 'listed_price', self.Id)
-    Lot = safe_int_cast(data['lot'], 'lot', self.Id)
-    Parking = safe_int_cast(data['parking'], 'parking', self.Id)
-    PricePerSqft = safe_int_cast(data['price_per_sqft'], 'price_per_sqft', self.Id)
-    Saves = safe_int_cast(data['saves'], 'saves', self.Id)
-    TimeOnZillow = safe_int_cast(data['time_on_zillow'], 'time_on_zillow', self.Id)
-    Views = safe_int_cast(data['views'], 'views', self.Id)
-    YearBuild = safe_int_cast(data['year_build'], 'year_build', self.Id)
-    ZEstimate = safe_int_cast(data['z_estimate'], 'z_estimate', self.Id)
+    self.GarageSpaces = safe_int_cast(data['garage_spaces'], 'garage_spaces', self.Id)
+    self.LastSalePrice = data['last_sale_price']
+    self.ListedPrice = safe_int_cast(data['listed_price'], 'listed_price', self.Id)
+    self.Lot = safe_int_cast(data['lot'], 'lot', self.Id)
+    self.Parking = safe_int_cast(data['parking'], 'parking', self.Id)
+    self.PricePerSqft = safe_int_cast(data['price_per_sqft'], 'price_per_sqft', self.Id)
+    self.Saves = safe_int_cast(data['saves'], 'saves', self.Id)
+    self.TimeOnZillow = safe_int_cast(data['time_on_zillow'], 'time_on_zillow', self.Id)
+    self.Views = safe_int_cast(data['views'], 'views', self.Id)
+    self.YearBuild = safe_int_cast(data['year_build'], 'year_build', self.Id)
+    self.ZEstimate = safe_int_cast(data['z_estimate'], 'z_estimate', self.Id)
 
 
 Base.metadata.create_all(engine)
