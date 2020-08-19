@@ -57,19 +57,21 @@ class Listing(Base):
   ListedPrice = Column('listed_price', Integer)
   PricePerSqft = Column('price_per_sqft', Integer)
   Saves = Column('saves', Integer)
+  SquareFeet = Column('square_feet', Integer)
   TimeOnZillow = Column('time_on_zillow', Integer)
   Views = Column('views', Integer)
   YearBuild = Column('year_build', Integer)
   ZEstimate = Column('z_estimate', Integer)
 
+  Agent = Column('agent', String)
   Appliances = Column('appliances', String)
   Cooling = Column('cooling', String)
-  Cooling = Column('cooling', String)
+  CoolingFeatures = Column('cooling_features', String)
   Fireplace = Column('fireplace', Boolean)
   Flooring = Column('flooring', String)
   GreatSchoolsRating = Column('great_schools_rating', String)
   Heating = Column('heating', String)
-  Heating = Column('heating', String)
+  HeatingFeatures = Column('heating_features', String)
   HomeAddress = Column('home_address', String)
   HomeType = Column('home_type', String)
   LastSaleSellDate = Column('last_sale_sell_date', DateTime)
@@ -91,14 +93,15 @@ class Listing(Base):
 
   def __init__(self, data):
     self.Id = data['_id']
+    self.Agent = data['agent']
     self.Appliances = data['appliances']
     self.Cooling = data['cooling']
-    self.Cooling = data['cooling']
+    self.CoolingFeatures = data['cooling_features']
     self.Fireplace = data['fireplace']
     self.Flooring = data['flooring']
     self.GreatSchoolsRating = data['great_schools_rating']
     self.Heating = data['heating']
-    self.Heating = data['heating']
+    self.HeatingFeatures = data['heating_features']
     self.HomeAddress = data['home_address']
     self.HomeType = data['home_type']
     self.LastSaleSellDate = data['last_sale_sell_date']
@@ -129,6 +132,7 @@ class Listing(Base):
     self.Parking = safe_int_cast(data['parking'], 'parking', self.Id)
     self.PricePerSqft = safe_int_cast(data['price_per_sqft'], 'price_per_sqft', self.Id)
     self.Saves = safe_int_cast(data['saves'], 'saves', self.Id)
+    self.SquareFeet = safe_int_cast(data['square_feet'], 'square_feet', self.Id)
     self.TimeOnZillow = safe_int_cast(data['time_on_zillow'], 'time_on_zillow', self.Id)
     self.Views = safe_int_cast(data['views'], 'views', self.Id)
     self.YearBuild = safe_int_cast(data['year_build'], 'year_build', self.Id)

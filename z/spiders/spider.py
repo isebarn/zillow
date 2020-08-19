@@ -18,14 +18,18 @@ class RootSpider(scrapy.Spider):
   errors = []
 
   def save_errors(self):
+    print("Saving errors")
     for error in self.errors:
       Operations.SaveError(error)
 
   def save_listings(self):
-    for listing in self.listings:
-      Operations.SaveListing(listing)
+    print("Saving listings")
+    listings_to_save = []
+    while len(self.listings) > 0:
+      listings_to_save.append(self.listings.pop())
 
-    self.listings = []
+    for listing in listings_to_save:
+      Operations.SaveListing(listing)
 
 
   def start_requests(self):
@@ -33,8 +37,7 @@ class RootSpider(scrapy.Spider):
     for url in start_urls[0:10]:
       yield scrapy.Request(url=url,
         callback=self.parse_urls,
-        errback=self.errbacktest,
-        meta={'root': url})
+        errback=self.errbacktest)
 
   def parse_urls(self, response):
     if response.status != 200:
@@ -43,28 +46,31 @@ class RootSpider(scrapy.Spider):
 
     urls = response.xpath("//a[@class='list-card-link']/@href").extract()
 
-    if len(self.errors) < 10:
-      for url in urls:
-        yield scrapy.Request(url,
-          callback=self.parse_listing,
-          errback=self.errbacktest)
+    for url in urls:
+      yield scrapy.Request(url,
+        callback=self.parse_listing,
+        errback=self.errbacktest)
 
-      # if there is a next page, scrape it
-      next_page_enabled = response.xpath("//a[@rel='next']/@disabled").extract_first() == None
-      if next_page_enabled:
-        url = response.xpath("//a[@rel='next']/@href").extract_first()
-        yield response.follow(url,
-          callback=self.parse_urls,
-          errback=self.errbacktest,
-          meta={'root': response.meta.get('root')})
-
+    # if there is a next page, scrape it
+    next_page_enabled = response.xpath("//a[@rel='next']/@disabled").extract_first() == None
+    if next_page_enabled:
+      url = response.xpath("//a[@rel='next']/@href").extract_first()
+      yield response.follow(url,
+        callback=self.parse_urls,
+        errback=self.errbacktest)
 
   def parse_listing(self, response):
-    if response.status != 200:
-      print(response.text)
+
+    if len(self.listings) > 10:
+      self.save_listings()
+
+    if len(self.errors) > 10:
       return
 
     try:
+      if response.status != 200:
+        raise Exception(response.status)
+
       self.get_fields(response)
 
     except Exception as e:
@@ -75,7 +81,11 @@ class RootSpider(scrapy.Spider):
       self.errors.append(error)
 
   def errbacktest(self, failiure):
-    pass
+    error = {}
+    error['url'] = response.url
+    error['error'] = str(failiure)
+
+    self.errors.append(error)
 
   @classmethod
   def from_crawler(cls, crawler, *args, **kwargs):
@@ -88,7 +98,6 @@ class RootSpider(scrapy.Spider):
     self.save_errors()
 
   def get_fields(self, response):
-    print(len(self.listings))
     result = {}
 
     result['_id'] = re.search(r'(.*?)_zpid', response.url).group(1).split('/')[-1]
@@ -96,6 +105,7 @@ class RootSpider(scrapy.Spider):
     result['home_address'] = response.xpath("//h1[@class='ds-address-container']/span/text()").extract_first()
     result['zillow_url'] = response.url
     result['listed_price'] = response.xpath("//span[@class='ds-value']/text()").extract_first('').replace('$', '').replace(',','')
+    result['square_feet'] = response.xpath("//span[@class='ds-bed-bath-living-area']")[-1].xpath(".//span/text()").extract_first(0).replace(',','')
 
     result['z_estimate'] = response.xpath("//span[contains(text(), 'Zestimate')]/sup[contains(text(), '®')]")[0].xpath("../../../span/text()")[0].extract().replace("$",'').replace(',','')
     result['time_on_zillow'] = response.xpath("//div[contains(text(), 'Time on Zillow')]/following-sibling::*[1]/text()").extract_first().replace(' days', '')
@@ -123,8 +133,8 @@ class RootSpider(scrapy.Spider):
     result['1_4_bathrooms'] = response.xpath("//span[contains(text(), '1/4 bathrooms:')]/text()[2]").extract_first(None)
 
     result['flooring'] = response.xpath("//span[contains(text(), 'Flooring:')]/text()[2]").extract_first()
-    result['heating'] = response.xpath("//span[contains(text(), 'Heating features:')]/text()[2]").extract_first()
-    result['cooling'] = response.xpath("//span[contains(text(), 'Cooling features:')]/text()[2]").extract_first()
+    result['heating_features'] = response.xpath("//span[contains(text(), 'Heating features:')]/text()[2]").extract_first()
+    result['cooling_features'] = response.xpath("//span[contains(text(), 'Cooling features:')]/text()[2]").extract_first()
     result['appliances'] = ''.join(response.xpath("//span[contains(text(), 'Appliances')]/../ul/li/span/text()").extract())
     result['fireplace'] = response.xpath("//span[contains(text(), 'Fireplace:')]/text()[2]").extract_first() == 'Yes'
     result['parking_features'] = response.xpath("//span[contains(text(), 'Parking features:')]/text()[2]").extract_first()
@@ -155,4 +165,8 @@ class RootSpider(scrapy.Spider):
     result['last_sale_price'] = last_sale_price
     result['last_sale_sell_date'] = datetime.fromtimestamp(last_sale_sell_date/1000) if last_sale_sell_date != None else None
 
+    result['agent'] = response.xpath("//span[@class='cf-listing-agent-display-name']/text()").extract_first('')
+
     self.listings.append(result)
+
+
