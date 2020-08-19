@@ -64,9 +64,6 @@ class RootSpider(scrapy.Spider):
     if len(self.listings) > 10:
       self.save_listings()
 
-    if len(self.errors) > 10:
-      return
-
     try:
       if response.status != 200:
         raise Exception(response.status)
