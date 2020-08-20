@@ -68,6 +68,7 @@ class RootSpider(scrapy.Spider):
         meta={'zip': response.meta.get('zip'), 'page': response.meta.get('page') + 1})
 
   def parse_listing(self, response):
+    print(response.meta.get('proxy'))
     if len(self.listings) > 10:
       self.save_listings()
 
