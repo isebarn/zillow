@@ -12,7 +12,7 @@ import json
 
 class RootSpider(scrapy.Spider):
   name = "root"
-  search_url = 'https://www.zillow.com/homes/{}_rb/'
+  search_url = 'https://www.zillow.com/homes/{}_rb/{}_p/'
   root_url = 'https://www.zillow.com/homes{}'
   listings = []
   errors = []
@@ -35,10 +35,10 @@ class RootSpider(scrapy.Spider):
   def start_requests(self):
     zip_codes = Operations.QueryZIP()
     for _zip in zip_codes[0:10]:
-      yield scrapy.Request(url=self.search_url.format(_zip.Value),
+      yield scrapy.Request(url=self.search_url.format(_zip.Value, 1),
         callback=self.parse_urls,
         errback=self.errbacktest,
-        meta={'zip': _zip.Value})
+        meta={'zip': _zip.Value, 'page': 1})
 
   def parse_urls(self, response):
     if response.status != 200:
@@ -55,18 +55,18 @@ class RootSpider(scrapy.Spider):
 
     # if there is a next page, scrape it
     next_page_enabled = response.xpath("//a[@rel='next']/@disabled").extract_first() == None
+
     if next_page_enabled:
       url = response.xpath("//a[@rel='next']/@href").extract_first()
 
       if url == None: return
 
-      yield response.follow(url,
+      yield scrapy.Request(self.search_url.format(response.meta.get('zip'), response.meta.get('page') + 1),
         callback=self.parse_urls,
         errback=self.errbacktest,
-        meta={'zip': response.meta.get('zip')})
+        meta={'zip': response.meta.get('zip'), 'page': response.meta.get('page') + 1})
 
   def parse_listing(self, response):
-
     if len(self.listings) > 10:
       self.save_listings()
 
