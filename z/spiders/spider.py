@@ -57,6 +57,9 @@ class RootSpider(scrapy.Spider):
     next_page_enabled = response.xpath("//a[@rel='next']/@disabled").extract_first() == None
     if next_page_enabled:
       url = response.xpath("//a[@rel='next']/@href").extract_first()
+
+      if url == None: return
+
       yield response.follow(url,
         callback=self.parse_urls,
         errback=self.errbacktest,
