@@ -34,7 +34,7 @@ class RootSpider(scrapy.Spider):
 
   def start_requests(self):
     zip_codes = Operations.QueryZIP()
-    for _zip in zip_codes[0:1]:
+    for _zip in zip_codes[0:10]:
       yield scrapy.Request(url=self.search_url.format(_zip.Value),
         callback=self.parse_urls,
         errback=self.errbacktest,
