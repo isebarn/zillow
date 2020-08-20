@@ -51,6 +51,7 @@ class Listing(Base):
   HalfBathrooms = Column('1_2_bathrooms', Integer)
   QuarterBathrooms = Column('1_4_bathrooms', Integer)
   ThreeQuarterBathrooms = Column('3_4_bathrooms', Integer)
+  ZIP = Column('zip', Integer)
 
   GarageSpaces = Column('garage_spaces', Integer)
   LastSalePrice = Column('last_sale_price', Integer)
@@ -124,6 +125,7 @@ class Listing(Base):
     self.HalfBathrooms = safe_int_cast(data['1_2_bathrooms'], '1_2_bathrooms', self.Id)
     self.QuarterBathrooms = safe_int_cast(data['1_4_bathrooms'], '1_4_bathrooms', self.Id)
     self.ThreeQuarterBathrooms = safe_int_cast(data['3_4_bathrooms'], '3_4_bathrooms', self.Id)
+    self.ZIP = safe_int_cast(data['zip'], 'zip', self.ZIP)
 
     self.GarageSpaces = safe_int_cast(data['garage_spaces'], 'garage_spaces', self.Id)
     self.LastSalePrice = data['last_sale_price']

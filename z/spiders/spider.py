@@ -33,11 +33,12 @@ class RootSpider(scrapy.Spider):
 
 
   def start_requests(self):
-    start_urls = [self.search_url.format(zip.Value) for zip in Operations.QueryZIP()]
-    for url in start_urls[0:10]:
-      yield scrapy.Request(url=url,
+    zip_codes = Operations.QueryZIP()
+    for _zip in zip_codes[0:1]:
+      yield scrapy.Request(url=self.search_url.format(_zip.Value),
         callback=self.parse_urls,
-        errback=self.errbacktest)
+        errback=self.errbacktest,
+        meta={'zip': _zip.Value})
 
   def parse_urls(self, response):
     if response.status != 200:
@@ -49,7 +50,8 @@ class RootSpider(scrapy.Spider):
     for url in urls:
       yield scrapy.Request(url,
         callback=self.parse_listing,
-        errback=self.errbacktest)
+        errback=self.errbacktest,
+        meta={'zip': response.meta.get('zip')})
 
     # if there is a next page, scrape it
     next_page_enabled = response.xpath("//a[@rel='next']/@disabled").extract_first() == None
@@ -57,7 +59,8 @@ class RootSpider(scrapy.Spider):
       url = response.xpath("//a[@rel='next']/@href").extract_first()
       yield response.follow(url,
         callback=self.parse_urls,
-        errback=self.errbacktest)
+        errback=self.errbacktest,
+        meta={'zip': response.meta.get('zip')})
 
   def parse_listing(self, response):
 
@@ -100,11 +103,24 @@ class RootSpider(scrapy.Spider):
     result['_id'] = re.search(r'(.*?)_zpid', response.url).group(1).split('/')[-1]
     result['scrape_date'] = date.today()
     result['home_address'] = response.xpath("//h1[@class='ds-address-container']/span/text()").extract_first()
+    result['zip'] = response.meta.get('zip')
     result['zillow_url'] = response.url
     result['listed_price'] = response.xpath("//span[@class='ds-value']/text()").extract_first('').replace('$', '').replace(',','')
     result['square_feet'] = response.xpath("//span[@class='ds-bed-bath-living-area']")[-1].xpath(".//span/text()").extract_first(0).replace(',','')
 
-    result['z_estimate'] = response.xpath("//span[contains(text(), 'Zestimate')]/sup[contains(text(), '®')]")[0].xpath("../../../span/text()")[0].extract().replace("$",'').replace(',','')
+    try:
+      result['z_estimate'] = response.xpath("//span[contains(text(), 'Zestimate')]/sup[contains(text(), '®')]")[0].xpath("../../../span/text()")[0].extract().replace("$",'').replace(',','')
+
+    except Exception as e:
+
+      try:
+        data = re.search(r'VariantQuery(.*?)</script><script', response.text).group(1)
+        data = data.replace("\\", '')
+        result['z_estimate'] = re.search(r'zestimate\":(.*?),', data).group(1)
+
+      except Exception as e:
+        result['z_estimate'] = ''
+
     result['time_on_zillow'] = response.xpath("//div[contains(text(), 'Time on Zillow')]/following-sibling::*[1]/text()").extract_first().replace(' days', '')
     result['views'] = response.xpath("//button[contains(text(), 'Views')]/../following-sibling::*[1]/text()").extract_first(0).replace(',','')
     result['saves'] = response.xpath("//button[contains(text(), 'Saves')]/../following-sibling::*[1]/text()").extract_first(0)
@@ -115,7 +131,10 @@ class RootSpider(scrapy.Spider):
     result['heating'] = response.xpath("//span[contains(text(), 'Heating:')]/following-sibling::*[1]/text()").extract_first()
     result['cooling'] = response.xpath("//span[contains(text(), 'Cooling:')]/following-sibling::*[1]/text()").extract_first()
 
-    result['parking'] = response.xpath("//span[contains(text(), 'Parking:')]/following-sibling::*[1]/text()").extract_first().split(' ')[0]
+    try:
+      result['parking'] = response.xpath("//span[contains(text(), 'Parking:')]/following-sibling::*[1]/text()").extract_first().split(' ')[0]
+    except Exception as e:
+      result['parking'] = None
 
     result['lot'] = response.xpath("//span[contains(text(), 'Lot:')]/following-sibling::*[1]/text()").extract_first('0').replace(' sqft', '').replace(',','')
 
@@ -157,10 +176,16 @@ class RootSpider(scrapy.Spider):
     price_history_string = re.search(r'priceHistory\\\":(.*?)}]', response.text).group(1)
     price_history_string = price_history_string.replace("\\", '')
     price_history_string += '}]'
-    price_history = json.loads(price_history_string)
-    last_sale_price, last_sale_sell_date = next(((item['price'], item['time']) for item in price_history if 'event' in item and item['event'] == 'Sold'), (None, None))
-    result['last_sale_price'] = last_sale_price
-    result['last_sale_sell_date'] = datetime.fromtimestamp(last_sale_sell_date/1000) if last_sale_sell_date != None else None
+
+    if price_history_string.startswith('[]'):
+      result['last_sale_price'] = None
+      result['last_sale_sell_date'] = None
+
+    else:
+      price_history = json.loads(price_history_string)
+      last_sale_price, last_sale_sell_date = next(((item['price'], item['time']) for item in price_history if 'event' in item and item['event'] == 'Sold'), (None, None))
+      result['last_sale_price'] = last_sale_price
+      result['last_sale_sell_date'] = datetime.fromtimestamp(last_sale_sell_date/1000) if last_sale_sell_date != None else None
 
     result['agent'] = response.xpath("//span[@class='cf-listing-agent-display-name']/text()").extract_first('')
 
