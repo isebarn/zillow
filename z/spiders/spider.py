@@ -19,8 +19,9 @@ class RootSpider(scrapy.Spider):
 
   def save_errors(self):
     print("Saving errors")
-    for error in self.errors:
-      Operations.SaveError(error)
+    while len(self.errors) > 0:
+      Operations.SaveError(self.errors.pop())
+
 
   def save_listings(self):
     print("Saving listings")
@@ -34,7 +35,7 @@ class RootSpider(scrapy.Spider):
 
   def start_requests(self):
     zip_codes = Operations.QueryZIP()
-    for _zip in zip_codes[0:10]:
+    for _zip in zip_codes:
       yield scrapy.Request(url=self.search_url.format(_zip.Value, 1),
         callback=self.parse_urls,
         errback=self.errbacktest,
@@ -69,6 +70,9 @@ class RootSpider(scrapy.Spider):
   def parse_listing(self, response):
     if len(self.listings) > 10:
       self.save_listings()
+
+    if len(self.errors) > 10:
+      self.save_errors()
 
     try:
       if response.status != 200:
