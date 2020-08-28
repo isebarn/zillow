@@ -13,9 +13,16 @@ import json
 class RootSpider(scrapy.Spider):
   name = "root"
   search_url = 'https://www.zillow.com/homes/{}_rb/{}_p/'
-  root_url = 'https://www.zillow.com/homes{}'
+  rent_url = 'https://www.zillow.com/homes/{}_rb/?searchQueryState=%7B%22pagination%22%3A%7B%22currentPage%22%3A{}%7D%2C%22usersSearchTerm%22%3A%2294107%22%2C%22mapBounds%22%3A%7B%22west%22%3A-122.61161373974612%2C%22east%22%3A-122.2099261176758%2C%22south%22%3A37.59411242334494%2C%22north%22%3A37.81521727170439%7D%2C%22regionSelection%22%3A%5B%7B%22regionId%22%3A97562%2C%22regionType%22%3A7%7D%5D%2C%22isMapVisible%22%3Atrue%2C%22mapZoom%22%3A12%2C%22filterState%22%3A%7B%22pmf%22%3A%7B%22value%22%3Afalse%7D%2C%22fore%22%3A%7B%22value%22%3Afalse%7D%2C%22auc%22%3A%7B%22value%22%3Afalse%7D%2C%22nc%22%3A%7B%22value%22%3Afalse%7D%2C%22fr%22%3A%7B%22value%22%3Atrue%7D%2C%22fsbo%22%3A%7B%22value%22%3Afalse%7D%2C%22cmsn%22%3A%7B%22value%22%3Afalse%7D%2C%22pf%22%3A%7B%22value%22%3Afalse%7D%2C%22fsba%22%3A%7B%22value%22%3Afalse%7D%7D%2C%22isListVisible%22%3Atrue%7D'
   listings = []
   errors = []
+
+  def create_error(self, response, error):
+    error = {}
+    error['url'] = response.url
+    error['error'] = str(error)
+
+    self.errors.append(error)
 
   def save_errors(self):
     print("Saving errors")
@@ -34,12 +41,20 @@ class RootSpider(scrapy.Spider):
 
 
   def start_requests(self):
+    self.scrape_type = getattr(self,'scrape_type', 0)
     zip_codes = Operations.QueryZIP()
+
+    if self.scrape_type ==  0:
+      zip_codes = [x for x in zip_codes if x.Value == '94107']
+      self.search_url = self.rent_url
+
     for _zip in zip_codes:
+
       yield scrapy.Request(url=self.search_url.format(_zip.Value, 1),
         callback=self.parse_urls,
         errback=self.errbacktest,
         meta={'zip': _zip.Value, 'page': 1})
+
 
   def parse_urls(self, response):
     if response.status != 200:
@@ -48,15 +63,29 @@ class RootSpider(scrapy.Spider):
 
     urls = response.xpath("//a[@class='list-card-link']/@href").extract()
 
-    for url in urls:
+    # Some listings from the list view have malformed URLS we find those that are okai
+    for url in [x for x in urls if '_zpid' in x]:
+      if 'https://www.zillow.com' not in url:
+        url = 'https://www.zillow.com' + url
+
       yield scrapy.Request(url,
         callback=self.parse_listing,
         errback=self.errbacktest,
         meta={'zip': response.meta.get('zip')})
 
+    # Some listings from the list view have malformed URLS we find those that are bad
+    # and request them and send them to get_better_url method
+    for url in [x for x in urls if '_zpid' not in x]:
+      if 'https://www.zillow.com' not in url:
+        url = 'https://www.zillow.com' + url
+
+      yield scrapy.Request(url,
+        callback=self.get_better_url,
+        errback=self.errbacktest,
+        meta={'zip': response.meta.get('zip')})
+
     # if there is a next page, scrape it
     next_page_enabled = response.xpath("//a[@rel='next']/@disabled").extract_first() == None
-
     if next_page_enabled:
       url = response.xpath("//a[@rel='next']/@href").extract_first()
 
@@ -67,12 +96,28 @@ class RootSpider(scrapy.Spider):
         errback=self.errbacktest,
         meta={'zip': response.meta.get('zip'), 'page': response.meta.get('page') + 1})
 
+  # This is to find a correct zillow URL from malformed URLS
+  def get_better_url(self, response):
+
+    try:
+      new_url_group = re.search(r'bestMatchedUnit":(.*?),"carouselPhotos', response.text).group(1)
+      new_url = json.loads(new_url_group)['hdpUrl']
+      url = 'https://www.zillow.com' + new_url
+      yield scrapy.Request(url,
+        callback=self.parse_listing,
+        errback=self.errbacktest,
+        meta={'zip': response.meta.get('zip')})
+
+    except Exception as e:
+      self.create_error(response, e)
+
+
   def parse_listing(self, response):
-    print(response.meta.get('proxy'))
-    if len(self.listings) > 10:
+    if len(self.listings) > 0 and len(self.listings)%10 == 0:
       self.save_listings()
 
-    if len(self.errors) > 10:
+    if len(self.errors) > 0 and len(self.errors)%10 == 0:
+      print(len(self.errors))
       self.save_errors()
 
     try:
@@ -82,15 +127,13 @@ class RootSpider(scrapy.Spider):
       self.get_fields(response)
 
     except Exception as e:
-      error = {}
-      error['url'] = response.url
-      error['error'] = str(e)
-
-      self.errors.append(error)
+      self.create_error(response, e)
 
   def errbacktest(self, failiure):
+    self.create_error(failure.value.response, failiure.value)
+
     error = {}
-    error['url'] = response.url
+    error['url'] = str(failiure)
     error['error'] = str(failiure)
 
     self.errors.append(error)
@@ -109,12 +152,20 @@ class RootSpider(scrapy.Spider):
     result = {}
 
     result['_id'] = re.search(r'(.*?)_zpid', response.url).group(1).split('/')[-1]
+    result['rent'] = True if self.scrape_type == 1 else False
+
     result['scrape_date'] = date.today()
     result['home_address'] = response.xpath("//h1[@class='ds-address-container']/span/text()").extract_first()
     result['zip'] = response.meta.get('zip')
     result['zillow_url'] = response.url
     result['listed_price'] = response.xpath("//span[@class='ds-value']/text()").extract_first('').replace('$', '').replace(',','')
-    result['square_feet'] = response.xpath("//span[@class='ds-bed-bath-living-area']")[-1].xpath(".//span/text()").extract_first(0).replace(',','')
+
+    try:
+      result['square_feet'] = response.xpath("//span[@class='ds-bed-bath-living-area']")[-1].xpath(".//span/text()").extract_first(0).replace(',','')
+
+    except Exception as e:
+      result['square_feet'] = 0
+
 
     try:
       result['z_estimate'] = response.xpath("//span[contains(text(), 'Zestimate')]/sup[contains(text(), '®')]")[0].xpath("../../../span/text()")[0].extract().replace("$",'').replace(',','')
@@ -129,8 +180,18 @@ class RootSpider(scrapy.Spider):
       except Exception as e:
         result['z_estimate'] = ''
 
-    result['time_on_zillow'] = response.xpath("//div[contains(text(), 'Time on Zillow')]/following-sibling::*[1]/text()").extract_first().replace(' days', '')
-    result['views'] = response.xpath("//button[contains(text(), 'Views')]/../following-sibling::*[1]/text()").extract_first(0).replace(',','')
+    try:
+      result['time_on_zillow'] = response.xpath("//div[contains(text(), 'Time on Zillow')]/following-sibling::*[1]/text()").extract_first().replace(' days', '')
+
+    except Exception as e:
+      result['time_on_zillow'] = 0
+
+    try:
+      result['views'] = response.xpath("//button[contains(text(), 'Views')]/../following-sibling::*[1]/text()").extract_first(0).replace(',','')
+
+    except Exception as e:
+      result['views'] = 0
+
     result['saves'] = response.xpath("//button[contains(text(), 'Saves')]/../following-sibling::*[1]/text()").extract_first(0)
 
     result['_type'] = response.xpath("//span[contains(text(), 'Type:')]/following-sibling::*[1]/text()").extract_first()
@@ -144,10 +205,18 @@ class RootSpider(scrapy.Spider):
     except Exception as e:
       result['parking'] = None
 
-    result['lot'] = response.xpath("//span[contains(text(), 'Lot:')]/following-sibling::*[1]/text()").extract_first('0').replace(' sqft', '').replace(',','')
+    try:
+      result['lot'] = response.xpath("//span[contains(text(), 'Lot:')]/following-sibling::*[1]/text()").extract_first('0').replace(' sqft', '').replace(',','')
+
+    except Exception as e:
+      result['lot'] = 0
 
 
-    result['price_per_sqft'] = response.xpath("//span[contains(text(), 'Price/sqft')]/following-sibling::*[1]/text()").extract_first('0').replace('$', '').replace(',','')
+    try:
+      result['price_per_sqft'] = response.xpath("//span[contains(text(), 'Price/sqft')]/following-sibling::*[1]/text()").extract_first('0').replace('$', '').replace(',','')
+
+    except Exception as e:
+      result['price_per_sqft'] = 0
 
     result['bedrooms'] = response.xpath("//span[contains(text(), 'Bedrooms:')]/text()[2]").extract_first(None)
     result['bathrooms'] = response.xpath("//span[contains(text(), 'Bathrooms:')]/text()[2]").extract_first(None)
@@ -181,9 +250,13 @@ class RootSpider(scrapy.Spider):
     result['neighborhood'] = response.xpath("//span[@id='skip-link-neighborhood']/following-sibling::div/h4/text()").extract_first().replace("Neighborhood: ", '')
 
     # price  history
-    price_history_string = re.search(r'priceHistory\\\":(.*?)}]', response.text).group(1)
-    price_history_string = price_history_string.replace("\\", '')
-    price_history_string += '}]'
+    try:
+      price_history_string = re.search(r'priceHistory\\\":(.*?)}]', response.text).group(1)
+      price_history_string = price_history_string.replace("\\", '')
+      price_history_string += '}]'
+
+    except Exception as e:
+      price_history_string = '[]'
 
     if price_history_string.startswith('[]'):
       result['last_sale_price'] = None

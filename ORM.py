@@ -90,6 +90,7 @@ class Listing(Base):
   NewConstruction = Column('new_construction', Boolean)
   OnWaterfront = Column('on_waterfront', Boolean)
   Spa = Column('spa', Boolean)
+  Rent = Column('rent', Boolean)
 
 
   def __init__(self, data):
@@ -139,6 +140,8 @@ class Listing(Base):
     self.Views = safe_int_cast(data['views'], 'views', self.Id)
     self.YearBuild = safe_int_cast(data['year_build'], 'year_build', self.Id)
     self.ZEstimate = safe_int_cast(data['z_estimate'], 'z_estimate', self.Id)
+    
+    self.Rent = data['rent']
 
 
 Base.metadata.create_all(engine)
@@ -169,6 +172,3 @@ class Operations:
     for zip_code in zip_codes:
       Operations.SaveZIP(zip_code)
 
-
-if __name__ == "__main__":
-  pass
