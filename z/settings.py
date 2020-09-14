@@ -23,13 +23,13 @@ ROBOTSTXT_OBEY = False
 CONCURRENT_REQUESTS = 2
 DOWNLOAD_DELAY = 2
 DOWNLOADER_MIDDLEWARES = {
-    'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware': None,
-    'rotating_proxies.middlewares.RotatingProxyMiddleware': 610,
+    #'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware': None,
+    #'rotating_proxies.middlewares.RotatingProxyMiddleware': 610,
     #'rotating_proxies.middlewares.BanDetectionMiddleware': 620,
 }
 
-ROTATED_PROXY_ENABLED = True
-ROTATING_PROXY_LIST = ['p.webshare.io:19999','p.webshare.io:20000','p.webshare.io:20001','p.webshare.io:20002','p.webshare.io:20003']
+#ROTATED_PROXY_ENABLED = True
+#ROTATING_PROXY_LIST = ['p.webshare.io:19999','p.webshare.io:20000','p.webshare.io:20001','p.webshare.io:20002','p.webshare.io:20003']
 
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
 CONCURRENT_REQUESTS = 5

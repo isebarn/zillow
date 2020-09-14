@@ -9,17 +9,20 @@ from datetime import date, datetime
 import re
 import json
 from ORM import Operations
+import requests
+from random import choice
 
 class RootSpider(scrapy.Spider):
   name = "root"
   search_url = 'https://www.zillow.com/homes/{}_rb/{}_p/'
   rent_url = 'https://www.zillow.com/homes/{}_rb/?searchQueryState=%7B%22pagination%22%3A%7B%22currentPage%22%3A{}%7D%2C%22usersSearchTerm%22%3A%2294107%22%2C%22mapBounds%22%3A%7B%22west%22%3A-122.61161373974612%2C%22east%22%3A-122.2099261176758%2C%22south%22%3A37.59411242334494%2C%22north%22%3A37.81521727170439%7D%2C%22regionSelection%22%3A%5B%7B%22regionId%22%3A97562%2C%22regionType%22%3A7%7D%5D%2C%22isMapVisible%22%3Atrue%2C%22mapZoom%22%3A12%2C%22filterState%22%3A%7B%22pmf%22%3A%7B%22value%22%3Afalse%7D%2C%22fore%22%3A%7B%22value%22%3Afalse%7D%2C%22auc%22%3A%7B%22value%22%3Afalse%7D%2C%22nc%22%3A%7B%22value%22%3Afalse%7D%2C%22fr%22%3A%7B%22value%22%3Atrue%7D%2C%22fsbo%22%3A%7B%22value%22%3Afalse%7D%2C%22cmsn%22%3A%7B%22value%22%3Afalse%7D%2C%22pf%22%3A%7B%22value%22%3Afalse%7D%2C%22fsba%22%3A%7B%22value%22%3Afalse%7D%7D%2C%22isListVisible%22%3Atrue%7D'
+  proxies_url = 'https://proxy.webshare.io/proxy/list/download/rbxxnxiqipaxnhyvlsclanwympqgntoguuuetzmg/-/http/port/domain/'
   listings = []
   errors = []
 
-  def create_error(self, response, error):
+  def create_error(self, url, error):
     error = {}
-    error['url'] = response.url
+    error['url'] = url
     error['error'] = str(error)
 
     self.errors.append(error)
@@ -39,22 +42,25 @@ class RootSpider(scrapy.Spider):
     for listing in listings_to_save:
       Operations.SaveListing(listing)
 
+  def proxy(self):
+    return choice(self.ROTATING_PROXY_LIST)
+
 
   def start_requests(self):
-
+    self.ROTATING_PROXY_LIST = requests.get(self.proxies_url).text.split('\r\n')[0:-1]
     self.scrape_type = getattr(self,'scrape_type', 0)
-    zip_codes = Operations.QueryZIP()
+    zip_codes = Operations.QueryZIP()[0:1]
 
     if self.scrape_type ==  0:
       zip_codes = [x for x in zip_codes if x.Value == '94107']
       self.search_url = self.rent_url
 
     for _zip in zip_codes:
-
+      proxy = self.proxy()
       yield scrapy.Request(url=self.search_url.format(_zip.Value, 1),
         callback=self.parse_urls,
-        errback=self.errbacktest,
-        meta={'zip': _zip.Value, 'page': 1})
+        errback=self.errback,
+        meta={'zip': _zip.Value, 'page': 1, 'proxy': self.proxy()})
 
 
   def parse_urls(self, response):
@@ -62,7 +68,7 @@ class RootSpider(scrapy.Spider):
       print(response.text)
       return
 
-    urls = response.xpath("//a[@class='list-card-link']/@href").extract()
+    urls = response.xpath("//a[starts-with(@class,'list-card-link')]/@href").extract()
 
     # Some listings from the list view have malformed URLS we find those that are okai
     for url in [x for x in urls if '_zpid' in x]:
@@ -71,8 +77,8 @@ class RootSpider(scrapy.Spider):
 
       yield scrapy.Request(url,
         callback=self.parse_listing,
-        errback=self.errbacktest,
-        meta={'zip': response.meta.get('zip')})
+        errback=self.errback,
+        meta={'zip': response.meta.get('zip'), 'proxy': self.proxy()})
 
     # Some listings from the list view have malformed URLS we find those that are bad
     # and request them and send them to get_better_url method
@@ -82,8 +88,8 @@ class RootSpider(scrapy.Spider):
 
       yield scrapy.Request(url,
         callback=self.get_better_url,
-        errback=self.errbacktest,
-        meta={'zip': response.meta.get('zip')})
+        errback=self.errback,
+        meta={'zip': response.meta.get('zip'), 'proxy': self.proxy()})
 
     # if there is a next page, scrape it
     next_page_enabled = response.xpath("//a[@rel='next']/@disabled").extract_first() == None
@@ -94,8 +100,11 @@ class RootSpider(scrapy.Spider):
 
       yield scrapy.Request(self.search_url.format(response.meta.get('zip'), response.meta.get('page') + 1),
         callback=self.parse_urls,
-        errback=self.errbacktest,
-        meta={'zip': response.meta.get('zip'), 'page': response.meta.get('page') + 1})
+        errback=self.errback,
+        meta={
+          'zip': response.meta.get('zip'),
+          'page': response.meta.get('page') + 1,
+          'proxy': self.proxy()})
 
   # This is to find a correct zillow URL from malformed URLS
   def get_better_url(self, response):
@@ -106,12 +115,11 @@ class RootSpider(scrapy.Spider):
       url = 'https://www.zillow.com' + new_url
       yield scrapy.Request(url,
         callback=self.parse_listing,
-        errback=self.errbacktest,
-        meta={'zip': response.meta.get('zip')})
+        errback=self.errback,
+        meta={'zip': response.meta.get('zip'), 'proxy': self.proxy()})
 
     except Exception as e:
-      self.create_error(response, e)
-
+      self.create_error(response.url, e)
 
   def parse_listing(self, response):
     if len(self.listings) > 0 and len(self.listings)%10 == 0:
@@ -128,16 +136,14 @@ class RootSpider(scrapy.Spider):
       self.get_fields(response)
 
     except Exception as e:
-      self.create_error(response, e)
+      self.create_error(response.url, e)
 
-  def errbacktest(self, failiure):
-    self.create_error(failure.value.response, failiure.value)
-
-    error = {}
-    error['url'] = str(failiure)
-    error['error'] = str(failiure)
-
-    self.errors.append(error)
+  def errback(self, failure):
+    pprint(failure)
+    try:
+      self.create_error(failure.value.response.url, failure.value)
+    except Exception as e:
+      pass
 
   @classmethod
   def from_crawler(cls, crawler, *args, **kwargs):
