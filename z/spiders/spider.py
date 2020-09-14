@@ -5,10 +5,10 @@ from time import time
 from pprint import pprint
 import os
 import re
-from ORM import Operations
 from datetime import date, datetime
 import re
 import json
+from ORM import Operations
 
 class RootSpider(scrapy.Spider):
   name = "root"
@@ -41,6 +41,7 @@ class RootSpider(scrapy.Spider):
 
 
   def start_requests(self):
+
     self.scrape_type = getattr(self,'scrape_type', 0)
     zip_codes = Operations.QueryZIP()
 
@@ -152,7 +153,7 @@ class RootSpider(scrapy.Spider):
     result = {}
 
     result['_id'] = re.search(r'(.*?)_zpid', response.url).group(1).split('/')[-1]
-    result['rent'] = True if self.scrape_type == 1 else False
+    result['rent'] = True if self.scrape_type == 0 else False
 
     result['scrape_date'] = date.today()
     result['home_address'] = response.xpath("//h1[@class='ds-address-container']/span/text()").extract_first()
