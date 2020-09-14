@@ -49,7 +49,7 @@ class RootSpider(scrapy.Spider):
   def start_requests(self):
     self.ROTATING_PROXY_LIST = requests.get(self.proxies_url).text.split('\r\n')[0:-1]
     self.scrape_type = getattr(self,'scrape_type', 0)
-    zip_codes = Operations.QueryZIP()[0:1]
+    zip_codes = Operations.QueryZIP()
 
     if self.scrape_type ==  0:
       zip_codes = [x for x in zip_codes if x.Value == '94107']
