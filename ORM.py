@@ -6,7 +6,7 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 from pprint import pprint
 
-engine = create_engine('postgresql://zillow:zillow123@192.168.1.35:5433/zillow', echo=False)
+engine = create_engine('postgresql://zillow:zillow123@localhost:5432/zillow', echo=False)
 Base = declarative_base()
 
 def read_file(filename):

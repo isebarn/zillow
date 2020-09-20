@@ -69,7 +69,7 @@ class RootSpider(scrapy.Spider):
       return
 
     urls = response.xpath("//a[starts-with(@class,'list-card-link')]/@href").extract()
-
+    '''
     # Some listings from the list view have malformed URLS we find those that are okai
     for url in [x for x in urls if '_zpid' in x]:
       if 'https://www.zillow.com' not in url:
@@ -79,10 +79,10 @@ class RootSpider(scrapy.Spider):
         callback=self.parse_listing,
         errback=self.errback,
         meta={'zip': response.meta.get('zip'), 'proxy': self.proxy()})
-
+    '''
     # Some listings from the list view have malformed URLS we find those that are bad
     # and request them and send them to get_better_url method
-    for url in [x for x in urls if '_zpid' not in x]:
+    for url in list(set([x for x in urls if '_zpid' not in x])):
       if 'https://www.zillow.com' not in url:
         url = 'https://www.zillow.com' + url
 
@@ -108,15 +108,25 @@ class RootSpider(scrapy.Spider):
 
   # This is to find a correct zillow URL from malformed URLS
   def get_better_url(self, response):
-
     try:
       new_url_group = re.search(r'bestMatchedUnit":(.*?),"carouselPhotos', response.text).group(1)
       new_url = json.loads(new_url_group)['hdpUrl']
       url = 'https://www.zillow.com' + new_url
-      yield scrapy.Request(url,
-        callback=self.parse_listing,
-        errback=self.errback,
-        meta={'zip': response.meta.get('zip'), 'proxy': self.proxy()})
+      if len(response.xpath("//a[@class='unit-card-link']")) > 0:
+        print(len(response.xpath("//a[@class='unit-card-link']")))
+        for url in response.xpath("//a[@class='unit-card-link']/@href").extract():
+          if 'https://www.zillow.com' not in url:
+            url = 'https://www.zillow.com' + url
+            yield scrapy.Request(url,
+              callback=self.parse_listing,
+              errback=self.errback,
+              meta={'zip': response.meta.get('zip'), 'proxy': self.proxy()})
+
+      else:
+        yield scrapy.Request(url,
+          callback=self.parse_listing,
+          errback=self.errback,
+          meta={'zip': response.meta.get('zip'), 'proxy': self.proxy()})
 
     except Exception as e:
       self.create_error(response.url, e)
@@ -136,6 +146,7 @@ class RootSpider(scrapy.Spider):
       self.get_fields(response)
 
     except Exception as e:
+      print(e)
       self.create_error(response.url, e)
 
   def errback(self, failure):
@@ -276,7 +287,6 @@ class RootSpider(scrapy.Spider):
       result['last_sale_sell_date'] = datetime.fromtimestamp(last_sale_sell_date/1000) if last_sale_sell_date != None else None
 
     result['agent'] = response.xpath("//span[@class='cf-listing-agent-display-name']/text()").extract_first('')
-
     self.listings.append(result)
 
 
