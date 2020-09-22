@@ -47,9 +47,21 @@ class RootSpider(scrapy.Spider):
 
 
   def start_requests(self):
+    zip_codes = Operations.QueryZIP()
     self.ROTATING_PROXY_LIST = requests.get(self.proxies_url).text.split('\r\n')[0:-1]
     self.scrape_type = getattr(self,'scrape_type', 0)
-    zip_codes = Operations.QueryZIP()
+    self.test_url = getattr(self,'test_url', None)
+    self.zip_code = getattr(self,'zip_code', None)
+
+    if self.test_url != None and self.zip_code != None:
+      zip_code = next(x for x in zip_codes if x.Value == self.zip_code)
+      yield scrapy.Request(self.test_url,
+        callback=self.get_better_url,
+        errback=self.errback,
+        meta={'zip': zip_code.Id, 'proxy': self.proxy()})
+
+      return
+
 
     if self.scrape_type ==  0:
       zip_codes = [x for x in zip_codes if x.Value == '94107']
@@ -69,17 +81,7 @@ class RootSpider(scrapy.Spider):
       return
 
     urls = response.xpath("//a[starts-with(@class,'list-card-link')]/@href").extract()
-    '''
-    # Some listings from the list view have malformed URLS we find those that are okai
-    for url in [x for x in urls if '_zpid' in x]:
-      if 'https://www.zillow.com' not in url:
-        url = 'https://www.zillow.com' + url
 
-      yield scrapy.Request(url,
-        callback=self.parse_listing,
-        errback=self.errback,
-        meta={'zip': response.meta.get('zip'), 'proxy': self.proxy()})
-    '''
     # Some listings from the list view have malformed URLS we find those that are bad
     # and request them and send them to get_better_url method
     for url in list(set([x for x in urls if '_zpid' not in x])):
@@ -112,8 +114,8 @@ class RootSpider(scrapy.Spider):
       new_url_group = re.search(r'bestMatchedUnit":(.*?),"carouselPhotos', response.text).group(1)
       new_url = json.loads(new_url_group)['hdpUrl']
       url = 'https://www.zillow.com' + new_url
+
       if len(response.xpath("//a[@class='unit-card-link']")) > 0:
-        print(len(response.xpath("//a[@class='unit-card-link']")))
         for url in response.xpath("//a[@class='unit-card-link']/@href").extract():
           if 'https://www.zillow.com' not in url:
             url = 'https://www.zillow.com' + url
@@ -121,6 +123,22 @@ class RootSpider(scrapy.Spider):
               callback=self.parse_listing,
               errback=self.errback,
               meta={'zip': response.meta.get('zip'), 'proxy': self.proxy()})
+
+      elif re.search(r'<script id="__NEXT_DATA__" type="application/json">(.*?)</script>', response.text) != None:
+        data = json.loads(re.search(r'<script id="__NEXT_DATA__" type="application/json">(.*?)</script>', response.text).group(1))
+        urls = ["https://www.zillow.com/homedetails/{}_zpid".format(x['zpid']) for x in data['props']['initialData']['building']['floorPlans']]
+        for url in urls:
+          yield scrapy.Request(url,
+            callback=self.parse_listing,
+            errback=self.errback,
+            meta={'zip': response.meta.get('zip'), 'proxy': self.proxy()})
+
+        urls = ["https://www.zillow.com/homedetails/{}_zpid".format(x['zpid']) for x in data['props']['initialData']['building']['ungroupedUnits']]
+        for url in urls:
+          yield scrapy.Request(url,
+            callback=self.parse_listing,
+            errback=self.errback,
+            meta={'zip': response.meta.get('zip'), 'proxy': self.proxy()})
 
       else:
         yield scrapy.Request(url,
@@ -176,7 +194,9 @@ class RootSpider(scrapy.Spider):
     result['home_address'] = response.xpath("//h1[@class='ds-address-container']/span/text()").extract_first()
     result['zip'] = response.meta.get('zip')
     result['zillow_url'] = response.url
+
     result['listed_price'] = response.xpath("//span[@class='ds-value']/text()").extract_first('').replace('$', '').replace(',','')
+
 
     try:
       result['square_feet'] = response.xpath("//span[@class='ds-bed-bath-living-area']")[-1].xpath(".//span/text()").extract_first(0).replace(',','')
@@ -265,7 +285,11 @@ class RootSpider(scrapy.Spider):
     school_rates = [school.xpath(".//div/div/span/text()").extract_first() for school in schools]
     result['great_schools_rating'] = ','.join(school_rates)
 
-    result['neighborhood'] = response.xpath("//span[@id='skip-link-neighborhood']/following-sibling::div/h4/text()").extract_first().replace("Neighborhood: ", '')
+    try:
+      result['neighborhood'] = response.xpath("//span[@id='skip-link-neighborhood']/following-sibling::div/h4/text()").extract_first().replace("Neighborhood: ", '')
+
+    except Exception as e:
+      result['neighborhood'] = ''
 
     # price  history
     try:
