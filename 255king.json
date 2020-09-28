@@ -1,0 +1,3706 @@
+{
+  "props": {
+    "pageProps": {
+      "clientProfilerData": {
+        "pageName": "Building:Details"
+      },
+      "response": null
+    },
+    "pageFrameData": {
+      "guid": "98ca642b-0f48-4c6b-82b5-740c6fd8a770",
+      "requestId": "a01be7fe-5e9e-4229-8365-3b1fd9810a61",
+      "clientProfilerHostid": "qIi8aKMyyQ4",
+      "clientProfilerBeaconUrl": "//e.zg-api.com:443"
+    },
+    "initialReduxState": {
+      "appState": {
+        "actionBarScrolled": false,
+        "actionBarShowing": true,
+        "browseHistory": [],
+        "comscoreHost": "www.zillow.com",
+        "contactBarSticking": false,
+        "customDimensions": {},
+        "customDimensionsSet": false,
+        "isBot": false,
+        "isFullPage": false,
+        "isLightbox": true,
+        "isMobile": false,
+        "isNativeApp": false,
+        "isNoAds": false,
+        "isTablet": false,
+        "scrollTop": 0,
+        "shouldOpenXdpLinksNewTab": false,
+        "topMenuSticking": false,
+        "urlBase": "https://www.zillow.com/",
+        "shouldOpenBdpWithContactForm": false,
+        "cdnHost": "https://www.zillowstatic.com/s3/building-details/static/",
+        "guid": null
+      },
+      "rentalContactForm": {
+        "renterProfile": {
+          "email": null,
+          "phone": null,
+          "currentZipCode": null,
+          "moveInDate": null,
+          "monthlyIncome": null,
+          "employer": null,
+          "leaseDuration": null,
+          "numBedrooms": null,
+          "numHousehold": null,
+          "creditScore": null,
+          "parkingNeeded": null,
+          "pets": [],
+          "comments": null
+        },
+        "tourScheduling": {
+          "availableTours": [],
+          "selectedDayIndex": -1,
+          "selectedTimeIndex": -1
+        },
+        "zpid": "",
+        "formType": "",
+        "propertyContactLevel": 0,
+        "maskType": "NONE",
+        "maxLowIncomeList": [],
+        "isLandlordLiaisonProgram": false,
+        "deviceType": "",
+        "isDesktop": false,
+        "isMobile": false,
+        "isTablet": false,
+        "isWowDesktopTablet": false,
+        "isWowMobileWeb": false,
+        "version": "V2",
+        "paymentType": "",
+        "pageType": "",
+        "userScenario": "",
+        "canShowOnBehalfOfInfo": false,
+        "renterInfo": {
+          "name": "",
+          "phone": "",
+          "email": "",
+          "isLandlordLiaisonMember": false,
+          "onBehalfOfName": "",
+          "onBehalfOfEmail": ""
+        },
+        "agentInfo": {
+          "companyName": "",
+          "contactName": "",
+          "badgeType": "",
+          "phone": "",
+          "verified": false,
+          "numRatings": 0,
+          "recentSales": 0,
+          "photoUrl": "",
+          "profileUrl": "",
+          "reviewsUrl": ""
+        },
+        "auth": {
+          "signedIn": false,
+          "authToken": "",
+          "rtoken": "",
+          "encodedZuid": "",
+          "showPasswordRecovery": false
+        },
+        "authFormIds": {},
+        "contactFormIdsSent": {},
+        "formTypeData": {
+          "message": "",
+          "selectedFlexibleDate": "",
+          "tourDates": [],
+          "userAvailability": {}
+        },
+        "formErrors": {
+          "auth": "",
+          "expiration": "",
+          "name": "",
+          "phone": "",
+          "email": "",
+          "onBehalfOfName": "",
+          "onBehalfOfEmail": "",
+          "message": "",
+          "question": "",
+          "userAvailability": "",
+          "server": "",
+          "authServer": ""
+        },
+        "modal": {
+          "modalZpid": "",
+          "modalFormType": "",
+          "modalContactLevel": 0,
+          "modalFormLocation": "",
+          "canShowRenterProfile": false,
+          "prevFormType": ""
+        },
+        "renterProfileErrors": {
+          "submissionError": null,
+          "currentZipCode": false,
+          "pets": false,
+          "moveInDate": false
+        },
+        "inFlight": false,
+        "duration": {
+          "startTimeRender": 0,
+          "startTimeSubmit": 0
+        },
+        "authResponse": {},
+        "rcfsResponse": {},
+        "submitResponse": {},
+        "formLocationResponse": {},
+        "passwordRecoveryResponse": {},
+        "rentalsQueueId": ""
+      },
+      "galleryLightbox": {
+        "isGalleryLightboxMapShowing": false,
+        "isMixedMediaLightboxShowing": false,
+        "mixedMediaLightboxInitialTab": "map",
+        "mixedMediaGalleryPhotoIndex": 0,
+        "mixedMediaGalleryPanoEntityID": "",
+        "mixedMediaGalleryVRModel": null,
+        "mixedMediaGalleryPanoViewingAngle": {},
+        "openWithStreetView": false,
+        "showContactAgentInGalleryLightbox": false
+      },
+      "googleMaps": {
+        "hasRequestedMetadata": {},
+        "googleMapsConfig": {
+          "mapLightboxApiKey": "AIzaSyBdka2nwqeknSXr-TkzLcVMbaJEx4CkZEM"
+        }
+      },
+      "unitsTable": {
+        "types": {
+          "For Sale": "All",
+          "For Rent": "All",
+          "Sold": "All",
+          "Off Market": "All"
+        },
+        "isDefaultTab": true,
+        "activeType": null,
+        "allUnitsOpen": false,
+        "floorplanLightbox": {
+          "floorplan": {
+            "isUnset": true,
+            "zpid": 0,
+            "baths": 0,
+            "beds": 0,
+            "sqft": 0,
+            "lightboxPhotoUrl": "https://www.zillowstatic.com/static/images/no-floorplan.png",
+            "thumbnailPhotoUrl": "https://www.zillowstatic.com/static/images/no-floorplan.png",
+            "photos": [],
+            "price": "No price available",
+            "minPrice": null,
+            "maxPrice": null,
+            "units": null,
+            "vrModels": null
+          },
+          "beds": 0,
+          "isWaitlisted": false,
+          "isOpen": false
+        },
+        "expandedInline": false,
+        "cardClickGAEvent": {
+          "category": "Link",
+          "action": "Submit",
+          "label": "page: BDP, click: Unit"
+        }
+      },
+      "photoWall": {
+        "carousel": {
+          "position": 0,
+          "sliding": false,
+          "direction": "photoWall/NEXT"
+        },
+        "timer": {
+          "used": false,
+          "start": null
+        }
+      },
+      "mediaStream": {
+        "isMediaStreamOpen": false,
+        "amenityVRModel": {
+          "vrModel": {},
+          "panoStructure": {
+            "prioritizedIdxToPanoTitleMap": null,
+            "isDefaultPanoDuplicate": false
+          },
+          "panoStructureLoaded": false
+        }
+      },
+      "login": {
+        "alreadySubscribed": false,
+        "authProcess": "standalone",
+        "isLoggedIn": false,
+        "savedProperties": [],
+        "hiddenProperties": [],
+        "showAuthLightbox": false
+      },
+      "listingContactDetails": {
+        "isLandlordLiaisonMember": false,
+        "zpid": null,
+        "brokerId": null,
+        "isCommunityPillar": false,
+        "isIncomeRestricted": false,
+        "rentalListingOwnerReputation": {},
+        "isFeatured": false,
+        "isPaidSingleFamilyBrokerId": false,
+        "isPaidMultiFamilyBrokerId": false,
+        "isListedByOwner": false,
+        "rentalListingOwnerContact": {},
+        "postingProductType": "",
+        "postingContact": {},
+        "postingUrl": "",
+        "building": {},
+        "dataLoaded": false,
+        "errorInLoading": false
+      }
+    },
+    "initialData": {
+      "building": {
+        "adTargets": {
+          "zguidh": "9110873506403529429",
+          "premieragent": "no",
+          "aamgnrc1": "255 King St PY200RM2R",
+          "city": "San_Francisco",
+          "state": "CA",
+          "zip": "94107",
+          "mlat": "37776943",
+          "mlong": "-122392803",
+          "listtp": "building",
+          "proptp": "apt",
+          "price": "",
+          "prange": "",
+          "bd": "1,2",
+          "pid": "1001486398",
+          "sqft": "671,744,747,959,963,983,993,1069,1343",
+          "sqftrange": "500-1000,1000-1500",
+          "ba": "1,2"
+        },
+        "__typename": "Building",
+        "amenityDetails": {
+          "fees": [],
+          "isSmokeFree": null,
+          "leaseTerms": [],
+          "petDetails": [],
+          "pets": [],
+          "__typename": "AmenityDetails",
+          "buildingAmenities": [],
+          "unitFeatures": [
+            "Fireplace"
+          ],
+          "customAmenities": null,
+          "hours": []
+        },
+        "currency": "USD",
+        "detailedPetPolicy": null,
+        "detailedParkingPolicies": null,
+        "leaseLengths": null,
+        "amenitySummary": {
+          "pets": null,
+          "parking": null,
+          "laundry": null,
+          "cooling": null,
+          "buildingDetails": [
+            "823 units",
+            "19 stories"
+          ],
+          "outdoor": null,
+          "__typename": "AmenitySummary"
+        },
+        "communityFeatures": [
+          "Fitness Center"
+        ],
+        "exteriorFeatures": null,
+        "interiorFeatures": null,
+        "extraFeatures": [
+          "Basketball Court"
+        ],
+        "buildingAreas": null,
+        "poolFeatures": null,
+        "buildingName": "Avalon at Mission Bay",
+        "streetAddress": "255 King St",
+        "breadcrumbs": [
+          {
+            "path": "/ca/apartments/",
+            "text": "California",
+            "gaLabel": "State",
+            "__typename": "Breadcrumb"
+          },
+          {
+            "path": "/san-francisco-ca/apartments/",
+            "text": "San Francisco",
+            "gaLabel": "City",
+            "__typename": "Breadcrumb"
+          },
+          {
+            "path": "/san-francisco-ca-94107/apartments/",
+            "text": "94107",
+            "gaLabel": "Zipcode",
+            "__typename": "Breadcrumb"
+          },
+          {
+            "path": "/mission-bay-san-francisco-ca/apartments/",
+            "text": "Mission Bay",
+            "gaLabel": "Neighborhood",
+            "__typename": "Breadcrumb"
+          }
+        ],
+        "bdpUrl": "/b/avalon-at-mission-bay-san-francisco-ca-5XjVCw/",
+        "buildingType": "FOR_RENT",
+        "lotId": "1001486398",
+        "address": {
+          "streetAddress": "255 King St",
+          "state": "CA",
+          "city": "San Francisco",
+          "zipcode": "94107",
+          "__typename": "Address",
+          "neighborhood": null
+        },
+        "isWaitlisted": false,
+        "contactInfo": {
+          "contactType": "FOR_RENT",
+          "__typename": "ContactInfo",
+          "providerListingID": "51rqzvfp669ja",
+          "rentalApplicationsAcceptedType": "NOT_ELIGIBLE"
+        },
+        "zpid": "2077839462",
+        "buildingPhoneNumber": "(669) 231-6878",
+        "city": "San Francisco",
+        "county": "San Francisco County",
+        "state": "CA",
+        "zipcode": "94107",
+        "fullAddress": "255 King St, San Francisco, CA 94107",
+        "listingFeatureType": "featured-refreshed",
+        "ungroupedUnits": [
+          {
+            "listingType": "OTHER",
+            "__typename": "UnitV2",
+            "unitNumber": "Unit 110",
+            "zpid": "2128457953",
+            "baths": 2,
+            "beds": 2,
+            "hdpUrl": null,
+            "sqft": 1069,
+            "price": null,
+            "lastSoldAt": null,
+            "listing_sub_type": {
+              "is_FSBA": false,
+              "is_FSBO": false,
+              "is_pending": false,
+              "is_newHome": false,
+              "is_foreclosure": false,
+              "is_bankOwned": false,
+              "is_forAuction": false,
+              "is_openHouse": false,
+              "is_comingSoon": false,
+              "__typename": "ListingSubtype"
+            },
+            "photo": null,
+            "unitVRModel": null,
+            "vrModel": null
+          },
+          {
+            "listingType": "OTHER",
+            "__typename": "UnitV2",
+            "unitNumber": "Unit 109",
+            "zpid": "2128457954",
+            "baths": 2,
+            "beds": 2,
+            "hdpUrl": null,
+            "sqft": 1343,
+            "price": null,
+            "lastSoldAt": null,
+            "listing_sub_type": {
+              "is_FSBA": false,
+              "is_FSBO": false,
+              "is_pending": false,
+              "is_newHome": false,
+              "is_foreclosure": false,
+              "is_bankOwned": false,
+              "is_forAuction": false,
+              "is_openHouse": false,
+              "is_comingSoon": false,
+              "__typename": "ListingSubtype"
+            },
+            "photo": null,
+            "unitVRModel": null,
+            "vrModel": null
+          },
+          {
+            "listingType": "OTHER",
+            "__typename": "UnitV2",
+            "unitNumber": "Unit 103",
+            "zpid": "2128457960",
+            "baths": 1,
+            "beds": 1,
+            "hdpUrl": null,
+            "sqft": 747,
+            "price": null,
+            "lastSoldAt": null,
+            "listing_sub_type": {
+              "is_FSBA": false,
+              "is_FSBO": false,
+              "is_pending": false,
+              "is_newHome": false,
+              "is_foreclosure": false,
+              "is_bankOwned": false,
+              "is_forAuction": false,
+              "is_openHouse": false,
+              "is_comingSoon": false,
+              "__typename": "ListingSubtype"
+            },
+            "photo": null,
+            "unitVRModel": null,
+            "vrModel": null
+          },
+          {
+            "listingType": "OTHER",
+            "__typename": "UnitV2",
+            "unitNumber": "Unit 105",
+            "zpid": "2128457958",
+            "baths": 1,
+            "beds": 1,
+            "hdpUrl": null,
+            "sqft": 959,
+            "price": null,
+            "lastSoldAt": null,
+            "listing_sub_type": {
+              "is_FSBA": false,
+              "is_FSBO": false,
+              "is_pending": false,
+              "is_newHome": false,
+              "is_foreclosure": false,
+              "is_bankOwned": false,
+              "is_forAuction": false,
+              "is_openHouse": false,
+              "is_comingSoon": false,
+              "__typename": "ListingSubtype"
+            },
+            "photo": null,
+            "unitVRModel": null,
+            "vrModel": null
+          },
+          {
+            "listingType": "OTHER",
+            "__typename": "UnitV2",
+            "unitNumber": "Unit 104",
+            "zpid": "2128457959",
+            "baths": 1,
+            "beds": 1,
+            "hdpUrl": null,
+            "sqft": 671,
+            "price": null,
+            "lastSoldAt": null,
+            "listing_sub_type": {
+              "is_FSBA": false,
+              "is_FSBO": false,
+              "is_pending": false,
+              "is_newHome": false,
+              "is_foreclosure": false,
+              "is_bankOwned": false,
+              "is_forAuction": false,
+              "is_openHouse": false,
+              "is_comingSoon": false,
+              "__typename": "ListingSubtype"
+            },
+            "photo": null,
+            "unitVRModel": null,
+            "vrModel": null
+          },
+          {
+            "listingType": "OTHER",
+            "__typename": "UnitV2",
+            "unitNumber": "Unit 102",
+            "zpid": "2128457961",
+            "baths": 1,
+            "beds": 1,
+            "hdpUrl": null,
+            "sqft": 744,
+            "price": null,
+            "lastSoldAt": null,
+            "listing_sub_type": {
+              "is_FSBA": false,
+              "is_FSBO": false,
+              "is_pending": false,
+              "is_newHome": false,
+              "is_foreclosure": false,
+              "is_bankOwned": false,
+              "is_forAuction": false,
+              "is_openHouse": false,
+              "is_comingSoon": false,
+              "__typename": "ListingSubtype"
+            },
+            "photo": null,
+            "unitVRModel": null,
+            "vrModel": null
+          },
+          {
+            "listingType": "OTHER",
+            "__typename": "UnitV2",
+            "unitNumber": "Unit 108",
+            "zpid": "2128457955",
+            "baths": 1,
+            "beds": 1,
+            "hdpUrl": null,
+            "sqft": 983,
+            "price": null,
+            "lastSoldAt": null,
+            "listing_sub_type": {
+              "is_FSBA": false,
+              "is_FSBO": false,
+              "is_pending": false,
+              "is_newHome": false,
+              "is_foreclosure": false,
+              "is_bankOwned": false,
+              "is_forAuction": false,
+              "is_openHouse": false,
+              "is_comingSoon": false,
+              "__typename": "ListingSubtype"
+            },
+            "photo": null,
+            "unitVRModel": null,
+            "vrModel": null
+          },
+          {
+            "listingType": "OTHER",
+            "__typename": "UnitV2",
+            "unitNumber": "Unit 107",
+            "zpid": "2128457956",
+            "baths": 1,
+            "beds": 1,
+            "hdpUrl": null,
+            "sqft": 993,
+            "price": null,
+            "lastSoldAt": null,
+            "listing_sub_type": {
+              "is_FSBA": false,
+              "is_FSBO": false,
+              "is_pending": false,
+              "is_newHome": false,
+              "is_foreclosure": false,
+              "is_bankOwned": false,
+              "is_forAuction": false,
+              "is_openHouse": false,
+              "is_comingSoon": false,
+              "__typename": "ListingSubtype"
+            },
+            "photo": null,
+            "unitVRModel": null,
+            "vrModel": null
+          },
+          {
+            "listingType": "OTHER",
+            "__typename": "UnitV2",
+            "unitNumber": "Unit 106",
+            "zpid": "2128457957",
+            "baths": 1,
+            "beds": 1,
+            "hdpUrl": null,
+            "sqft": 963,
+            "price": null,
+            "lastSoldAt": null,
+            "listing_sub_type": {
+              "is_FSBA": false,
+              "is_FSBO": false,
+              "is_pending": false,
+              "is_newHome": false,
+              "is_foreclosure": false,
+              "is_bankOwned": false,
+              "is_forAuction": false,
+              "is_openHouse": false,
+              "is_comingSoon": false,
+              "__typename": "ListingSubtype"
+            },
+            "photo": null,
+            "unitVRModel": null,
+            "vrModel": null
+          }
+        ],
+        "floorPlans": [
+          {
+            "zpid": "2095557320",
+            "__typename": "FloorPlan",
+            "units": null,
+            "minPrice": 2120,
+            "maxPrice": 2120,
+            "baths": 1,
+            "beds": 0,
+            "sqft": 539,
+            "availableFrom": "0",
+            "photos": [
+              {
+                "url": "https://photos.zillowstatic.com/fp/d2d3339229cd304f321cf62717f729a8-f_a.jpg",
+                "__typename": "Photo"
+              },
+              {
+                "url": "https://photos.zillowstatic.com/fp/d2d3339229cd304f321cf62717f729a8-f_b.jpg",
+                "__typename": "Photo"
+              }
+            ],
+            "floorplanVRModel": null
+          },
+          {
+            "zpid": "2078231008",
+            "__typename": "FloorPlan",
+            "units": null,
+            "minPrice": 2165,
+            "maxPrice": 2165,
+            "baths": 1,
+            "beds": 0,
+            "sqft": 651,
+            "availableFrom": "0",
+            "photos": [
+              {
+                "url": "https://photos.zillowstatic.com/fp/053261d181dcf499df27ee37219b1be1-f_a.jpg",
+                "__typename": "Photo"
+              },
+              {
+                "url": "https://photos.zillowstatic.com/fp/053261d181dcf499df27ee37219b1be1-f_b.jpg",
+                "__typename": "Photo"
+              }
+            ],
+            "floorplanVRModel": null
+          },
+          {
+            "zpid": "2078842114",
+            "__typename": "FloorPlan",
+            "units": null,
+            "minPrice": 2445,
+            "maxPrice": 2445,
+            "baths": 1,
+            "beds": 0,
+            "sqft": 621,
+            "availableFrom": "0",
+            "photos": [
+              {
+                "url": "https://photos.zillowstatic.com/fp/c0d76dc3358421c9e7d613b63eff2937-f_a.jpg",
+                "__typename": "Photo"
+              },
+              {
+                "url": "https://photos.zillowstatic.com/fp/c0d76dc3358421c9e7d613b63eff2937-f_b.jpg",
+                "__typename": "Photo"
+              }
+            ],
+            "floorplanVRModel": null
+          },
+          {
+            "zpid": "2077947958",
+            "__typename": "FloorPlan",
+            "units": null,
+            "minPrice": 2562,
+            "maxPrice": 2562,
+            "baths": 1,
+            "beds": 0,
+            "sqft": 601,
+            "availableFrom": "0",
+            "photos": [
+              {
+                "url": "https://photos.zillowstatic.com/fp/731b45eb5f4478f21daeab9051e92c02-f_a.jpg",
+                "__typename": "Photo"
+              },
+              {
+                "url": "https://photos.zillowstatic.com/fp/731b45eb5f4478f21daeab9051e92c02-f_b.jpg",
+                "__typename": "Photo"
+              }
+            ],
+            "floorplanVRModel": null
+          },
+          {
+            "zpid": "2095557340",
+            "__typename": "FloorPlan",
+            "units": null,
+            "minPrice": 2190,
+            "maxPrice": 2190,
+            "baths": 1,
+            "beds": 1,
+            "sqft": 680,
+            "availableFrom": "0",
+            "photos": [
+              {
+                "url": "https://photos.zillowstatic.com/fp/93afbad97a17f3c6a4c91d823de191cc-f_a.jpg",
+                "__typename": "Photo"
+              },
+              {
+                "url": "https://photos.zillowstatic.com/fp/93afbad97a17f3c6a4c91d823de191cc-f_b.jpg",
+                "__typename": "Photo"
+              }
+            ],
+            "floorplanVRModel": null
+          },
+          {
+            "zpid": "2095557339",
+            "__typename": "FloorPlan",
+            "units": null,
+            "minPrice": 2215,
+            "maxPrice": 2215,
+            "baths": 1,
+            "beds": 1,
+            "sqft": 738,
+            "availableFrom": "0",
+            "photos": [
+              {
+                "url": "https://photos.zillowstatic.com/fp/a2b9e4b3078c38e25ac85a5bda5459c4-f_a.jpg",
+                "__typename": "Photo"
+              },
+              {
+                "url": "https://photos.zillowstatic.com/fp/a2b9e4b3078c38e25ac85a5bda5459c4-f_b.jpg",
+                "__typename": "Photo"
+              }
+            ],
+            "floorplanVRModel": null
+          },
+          {
+            "zpid": "2080632056",
+            "__typename": "FloorPlan",
+            "units": null,
+            "minPrice": 2230,
+            "maxPrice": 2230,
+            "baths": 1,
+            "beds": 1,
+            "sqft": 784,
+            "availableFrom": "0",
+            "photos": [
+              {
+                "url": "https://photos.zillowstatic.com/fp/1671322d20cefe3c0ee36b1506750ac5-f_a.jpg",
+                "__typename": "Photo"
+              },
+              {
+                "url": "https://photos.zillowstatic.com/fp/1671322d20cefe3c0ee36b1506750ac5-f_b.jpg",
+                "__typename": "Photo"
+              }
+            ],
+            "floorplanVRModel": null
+          },
+          {
+            "zpid": "2080237763",
+            "__typename": "FloorPlan",
+            "units": null,
+            "minPrice": 2245,
+            "maxPrice": 2245,
+            "baths": 1,
+            "beds": 1,
+            "sqft": 747,
+            "availableFrom": "0",
+            "photos": [
+              {
+                "url": "https://photos.zillowstatic.com/fp/0dd8f004e05724b79913483705d17373-f_a.jpg",
+                "__typename": "Photo"
+              },
+              {
+                "url": "https://photos.zillowstatic.com/fp/0dd8f004e05724b79913483705d17373-f_b.jpg",
+                "__typename": "Photo"
+              }
+            ],
+            "floorplanVRModel": null
+          },
+          {
+            "zpid": "2079519961",
+            "__typename": "FloorPlan",
+            "units": null,
+            "minPrice": 2252,
+            "maxPrice": 2252,
+            "baths": 1,
+            "beds": 1,
+            "sqft": 747,
+            "availableFrom": "0",
+            "photos": [
+              {
+                "url": "https://photos.zillowstatic.com/fp/0de870cf6903b92907b85f4df1179dd1-f_a.jpg",
+                "__typename": "Photo"
+              },
+              {
+                "url": "https://photos.zillowstatic.com/fp/0de870cf6903b92907b85f4df1179dd1-f_b.jpg",
+                "__typename": "Photo"
+              }
+            ],
+            "floorplanVRModel": null
+          },
+          {
+            "zpid": "2080162853",
+            "__typename": "FloorPlan",
+            "units": null,
+            "minPrice": 2261,
+            "maxPrice": 2261,
+            "baths": 1,
+            "beds": 1,
+            "sqft": 683,
+            "availableFrom": "0",
+            "photos": [
+              {
+                "url": "https://photos.zillowstatic.com/fp/02477ce5b755f797709ba6e63e90ba84-f_a.jpg",
+                "__typename": "Photo"
+              },
+              {
+                "url": "https://photos.zillowstatic.com/fp/02477ce5b755f797709ba6e63e90ba84-f_b.jpg",
+                "__typename": "Photo"
+              }
+            ],
+            "floorplanVRModel": null
+          },
+          {
+            "zpid": "2080682755",
+            "__typename": "FloorPlan",
+            "units": null,
+            "minPrice": 2310,
+            "maxPrice": 2310,
+            "baths": 1,
+            "beds": 1,
+            "sqft": 855,
+            "availableFrom": "0",
+            "photos": [
+              {
+                "url": "https://photos.zillowstatic.com/fp/b938e8e5d26a16e0903a8985088a0ef6-f_a.jpg",
+                "__typename": "Photo"
+              },
+              {
+                "url": "https://photos.zillowstatic.com/fp/b938e8e5d26a16e0903a8985088a0ef6-f_b.jpg",
+                "__typename": "Photo"
+              }
+            ],
+            "floorplanVRModel": null
+          },
+          {
+            "zpid": "2080099684",
+            "__typename": "FloorPlan",
+            "units": null,
+            "minPrice": 2340,
+            "maxPrice": 2340,
+            "baths": 1,
+            "beds": 1,
+            "sqft": 822,
+            "availableFrom": "0",
+            "photos": [
+              {
+                "url": "https://photos.zillowstatic.com/fp/49bf16324e83c4a66d298c8ff7ca3506-f_a.jpg",
+                "__typename": "Photo"
+              },
+              {
+                "url": "https://photos.zillowstatic.com/fp/49bf16324e83c4a66d298c8ff7ca3506-f_b.jpg",
+                "__typename": "Photo"
+              }
+            ],
+            "floorplanVRModel": null
+          },
+          {
+            "zpid": "2078188743",
+            "__typename": "FloorPlan",
+            "units": null,
+            "minPrice": 2340,
+            "maxPrice": 2340,
+            "baths": 1,
+            "beds": 1,
+            "sqft": 752,
+            "availableFrom": "0",
+            "photos": [
+              {
+                "url": "https://photos.zillowstatic.com/fp/7ada8999de9d052cc42104da61ab0919-f_a.jpg",
+                "__typename": "Photo"
+              },
+              {
+                "url": "https://photos.zillowstatic.com/fp/7ada8999de9d052cc42104da61ab0919-f_b.jpg",
+                "__typename": "Photo"
+              }
+            ],
+            "floorplanVRModel": null
+          },
+          {
+            "zpid": "2080498818",
+            "__typename": "FloorPlan",
+            "units": null,
+            "minPrice": 2345,
+            "maxPrice": 2345,
+            "baths": 1,
+            "beds": 1,
+            "sqft": 814,
+            "availableFrom": "0",
+            "photos": [
+              {
+                "url": "https://photos.zillowstatic.com/fp/34e6eca96a6bf9cbe204e0a9459abbea-f_a.jpg",
+                "__typename": "Photo"
+              },
+              {
+                "url": "https://photos.zillowstatic.com/fp/34e6eca96a6bf9cbe204e0a9459abbea-f_b.jpg",
+                "__typename": "Photo"
+              }
+            ],
+            "floorplanVRModel": null
+          },
+          {
+            "zpid": "2095433849",
+            "__typename": "FloorPlan",
+            "units": null,
+            "minPrice": 2350,
+            "maxPrice": 2350,
+            "baths": 1,
+            "beds": 1,
+            "sqft": 856,
+            "availableFrom": "0",
+            "photos": [
+              {
+                "url": "https://photos.zillowstatic.com/fp/6b8450250fa891da2ca6d5347f69428f-f_a.jpg",
+                "__typename": "Photo"
+              },
+              {
+                "url": "https://photos.zillowstatic.com/fp/6b8450250fa891da2ca6d5347f69428f-f_b.jpg",
+                "__typename": "Photo"
+              }
+            ],
+            "floorplanVRModel": null
+          },
+          {
+            "zpid": "2080565209",
+            "__typename": "FloorPlan",
+            "units": null,
+            "minPrice": 2356,
+            "maxPrice": 2356,
+            "baths": 1,
+            "beds": 1,
+            "sqft": 782,
+            "availableFrom": "0",
+            "photos": [
+              {
+                "url": "https://photos.zillowstatic.com/fp/418671fae087b66397de6bfb0f749ad4-f_a.jpg",
+                "__typename": "Photo"
+              },
+              {
+                "url": "https://photos.zillowstatic.com/fp/418671fae087b66397de6bfb0f749ad4-f_b.jpg",
+                "__typename": "Photo"
+              }
+            ],
+            "floorplanVRModel": null
+          },
+          {
+            "zpid": "2080540491",
+            "__typename": "FloorPlan",
+            "units": null,
+            "minPrice": 2357,
+            "maxPrice": 2357,
+            "baths": 1,
+            "beds": 1,
+            "sqft": 744,
+            "availableFrom": "0",
+            "photos": [
+              {
+                "url": "https://photos.zillowstatic.com/fp/1b53b7b581a69c7abf3decdc06d974bf-f_a.jpg",
+                "__typename": "Photo"
+              },
+              {
+                "url": "https://photos.zillowstatic.com/fp/1b53b7b581a69c7abf3decdc06d974bf-f_b.jpg",
+                "__typename": "Photo"
+              }
+            ],
+            "floorplanVRModel": null
+          },
+          {
+            "zpid": "2095557343",
+            "__typename": "FloorPlan",
+            "units": null,
+            "minPrice": 2359,
+            "maxPrice": 2359,
+            "baths": 1,
+            "beds": 1,
+            "sqft": 787,
+            "availableFrom": "0",
+            "photos": [
+              {
+                "url": "https://photos.zillowstatic.com/fp/6338a9cfa26f31b3d899596bf44b64f4-f_a.jpg",
+                "__typename": "Photo"
+              },
+              {
+                "url": "https://photos.zillowstatic.com/fp/6338a9cfa26f31b3d899596bf44b64f4-f_b.jpg",
+                "__typename": "Photo"
+              }
+            ],
+            "floorplanVRModel": null
+          },
+          {
+            "zpid": "2079387185",
+            "__typename": "FloorPlan",
+            "units": null,
+            "minPrice": 2366,
+            "maxPrice": 2366,
+            "baths": 1,
+            "beds": 1,
+            "sqft": 574,
+            "availableFrom": "0",
+            "photos": [
+              {
+                "url": "https://photos.zillowstatic.com/fp/89997f8465e7b30a55ec6fc8b2526d5d-f_a.jpg",
+                "__typename": "Photo"
+              },
+              {
+                "url": "https://photos.zillowstatic.com/fp/89997f8465e7b30a55ec6fc8b2526d5d-f_b.jpg",
+                "__typename": "Photo"
+              }
+            ],
+            "floorplanVRModel": null
+          },
+          {
+            "zpid": "2078989501",
+            "__typename": "FloorPlan",
+            "units": null,
+            "minPrice": 2380,
+            "maxPrice": 2380,
+            "baths": 1,
+            "beds": 1,
+            "sqft": 816,
+            "availableFrom": "0",
+            "photos": [
+              {
+                "url": "https://photos.zillowstatic.com/fp/0c534169d574e126755c1c587aa22827-f_a.jpg",
+                "__typename": "Photo"
+              },
+              {
+                "url": "https://photos.zillowstatic.com/fp/0c534169d574e126755c1c587aa22827-f_b.jpg",
+                "__typename": "Photo"
+              }
+            ],
+            "floorplanVRModel": null
+          },
+          {
+            "zpid": "2079265686",
+            "__typename": "FloorPlan",
+            "units": null,
+            "minPrice": 2390,
+            "maxPrice": 2390,
+            "baths": 1,
+            "beds": 1,
+            "sqft": 798,
+            "availableFrom": "0",
+            "photos": [
+              {
+                "url": "https://photos.zillowstatic.com/fp/f8da62b01bcf9bb2f928bb9b23f116cc-f_a.jpg",
+                "__typename": "Photo"
+              },
+              {
+                "url": "https://photos.zillowstatic.com/fp/f8da62b01bcf9bb2f928bb9b23f116cc-f_b.jpg",
+                "__typename": "Photo"
+              }
+            ],
+            "floorplanVRModel": null
+          },
+          {
+            "zpid": "2078325279",
+            "__typename": "FloorPlan",
+            "units": null,
+            "minPrice": 2432,
+            "maxPrice": 2432,
+            "baths": 1,
+            "beds": 1,
+            "sqft": 841,
+            "availableFrom": "0",
+            "photos": [
+              {
+                "url": "https://photos.zillowstatic.com/fp/c555d1caadbeaf1987eb0ef350288ea6-f_a.jpg",
+                "__typename": "Photo"
+              },
+              {
+                "url": "https://photos.zillowstatic.com/fp/c555d1caadbeaf1987eb0ef350288ea6-f_b.jpg",
+                "__typename": "Photo"
+              }
+            ],
+            "floorplanVRModel": null
+          },
+          {
+            "zpid": "2079916355",
+            "__typename": "FloorPlan",
+            "units": null,
+            "minPrice": 2440,
+            "maxPrice": 2440,
+            "baths": 1,
+            "beds": 1,
+            "sqft": 825,
+            "availableFrom": "0",
+            "photos": [
+              {
+                "url": "https://photos.zillowstatic.com/fp/42cccdd87de0ad2e4f68b40fec0c369b-f_a.jpg",
+                "__typename": "Photo"
+              },
+              {
+                "url": "https://photos.zillowstatic.com/fp/42cccdd87de0ad2e4f68b40fec0c369b-f_b.jpg",
+                "__typename": "Photo"
+              }
+            ],
+            "floorplanVRModel": null
+          },
+          {
+            "zpid": "2079948493",
+            "__typename": "FloorPlan",
+            "units": null,
+            "minPrice": 2450,
+            "maxPrice": 2450,
+            "baths": 1,
+            "beds": 1,
+            "sqft": 971,
+            "availableFrom": "0",
+            "photos": [
+              {
+                "url": "https://photos.zillowstatic.com/fp/4c20614570d4d7f0b06aeb00a7ce011f-f_a.jpg",
+                "__typename": "Photo"
+              },
+              {
+                "url": "https://photos.zillowstatic.com/fp/4c20614570d4d7f0b06aeb00a7ce011f-f_b.jpg",
+                "__typename": "Photo"
+              }
+            ],
+            "floorplanVRModel": null
+          },
+          {
+            "zpid": "2080593577",
+            "__typename": "FloorPlan",
+            "units": null,
+            "minPrice": 2460,
+            "maxPrice": 2460,
+            "baths": 1,
+            "beds": 1,
+            "sqft": 854,
+            "availableFrom": "0",
+            "photos": [
+              {
+                "url": "https://photos.zillowstatic.com/fp/348c7d8bea009174f3b53fcd6d32e708-f_a.jpg",
+                "__typename": "Photo"
+              },
+              {
+                "url": "https://photos.zillowstatic.com/fp/348c7d8bea009174f3b53fcd6d32e708-f_b.jpg",
+                "__typename": "Photo"
+              }
+            ],
+            "floorplanVRModel": null
+          },
+          {
+            "zpid": "2079409361",
+            "__typename": "FloorPlan",
+            "units": null,
+            "minPrice": 2461,
+            "maxPrice": 2461,
+            "baths": 1,
+            "beds": 1,
+            "sqft": 764,
+            "availableFrom": "0",
+            "photos": [
+              {
+                "url": "https://photos.zillowstatic.com/fp/a41feb6fe965e08efac72efab7e03e8f-f_a.jpg",
+                "__typename": "Photo"
+              },
+              {
+                "url": "https://photos.zillowstatic.com/fp/a41feb6fe965e08efac72efab7e03e8f-f_b.jpg",
+                "__typename": "Photo"
+              }
+            ],
+            "floorplanVRModel": null
+          },
+          {
+            "zpid": "2080632055",
+            "__typename": "FloorPlan",
+            "units": null,
+            "minPrice": 2520,
+            "maxPrice": 2520,
+            "baths": 1,
+            "beds": 1,
+            "sqft": 993,
+            "availableFrom": "0",
+            "photos": [
+              {
+                "url": "https://photos.zillowstatic.com/fp/0e7cca0ff982ccdae069ddf3471bbcc1-f_a.jpg",
+                "__typename": "Photo"
+              },
+              {
+                "url": "https://photos.zillowstatic.com/fp/0e7cca0ff982ccdae069ddf3471bbcc1-f_b.jpg",
+                "__typename": "Photo"
+              }
+            ],
+            "floorplanVRModel": null
+          },
+          {
+            "zpid": "2095027975",
+            "__typename": "FloorPlan",
+            "units": null,
+            "minPrice": 2535,
+            "maxPrice": 2535,
+            "baths": 1,
+            "beds": 1,
+            "sqft": 1006,
+            "availableFrom": "0",
+            "photos": [
+              {
+                "url": "https://photos.zillowstatic.com/fp/d48e77c794536b21e1a862863904beac-f_a.jpg",
+                "__typename": "Photo"
+              },
+              {
+                "url": "https://photos.zillowstatic.com/fp/d48e77c794536b21e1a862863904beac-f_b.jpg",
+                "__typename": "Photo"
+              }
+            ],
+            "floorplanVRModel": null
+          },
+          {
+            "zpid": "2080540492",
+            "__typename": "FloorPlan",
+            "units": null,
+            "minPrice": 2540,
+            "maxPrice": 2540,
+            "baths": 1,
+            "beds": 1,
+            "sqft": 902,
+            "availableFrom": "0",
+            "photos": [
+              {
+                "url": "https://photos.zillowstatic.com/fp/050f9025dc12f469ded1c21f996d9890-f_a.jpg",
+                "__typename": "Photo"
+              },
+              {
+                "url": "https://photos.zillowstatic.com/fp/050f9025dc12f469ded1c21f996d9890-f_b.jpg",
+                "__typename": "Photo"
+              }
+            ],
+            "floorplanVRModel": null
+          },
+          {
+            "zpid": "2077911275",
+            "__typename": "FloorPlan",
+            "units": null,
+            "minPrice": 2550,
+            "maxPrice": 2550,
+            "baths": 1,
+            "beds": 1,
+            "sqft": 837,
+            "availableFrom": "0",
+            "photos": [
+              {
+                "url": "https://photos.zillowstatic.com/fp/92810e0df020b1ac8f39925809094f43-f_a.jpg",
+                "__typename": "Photo"
+              },
+              {
+                "url": "https://photos.zillowstatic.com/fp/92810e0df020b1ac8f39925809094f43-f_b.jpg",
+                "__typename": "Photo"
+              }
+            ],
+            "floorplanVRModel": null
+          },
+          {
+            "zpid": "2079409360",
+            "__typename": "FloorPlan",
+            "units": null,
+            "minPrice": 2560,
+            "maxPrice": 2560,
+            "baths": 1,
+            "beds": 1,
+            "sqft": 839,
+            "availableFrom": "0",
+            "photos": [
+              {
+                "url": "https://photos.zillowstatic.com/fp/7a1bd0118923154a674b845889e31c1d-f_a.jpg",
+                "__typename": "Photo"
+              },
+              {
+                "url": "https://photos.zillowstatic.com/fp/7a1bd0118923154a674b845889e31c1d-f_b.jpg",
+                "__typename": "Photo"
+              }
+            ],
+            "floorplanVRModel": null
+          },
+          {
+            "zpid": "2079081517",
+            "__typename": "FloorPlan",
+            "units": null,
+            "minPrice": 2596,
+            "maxPrice": 2596,
+            "baths": 1,
+            "beds": 1,
+            "sqft": 812,
+            "availableFrom": "0",
+            "photos": [
+              {
+                "url": "https://photos.zillowstatic.com/fp/4e0ea879bc2f5462e04c403d6d00df60-f_a.jpg",
+                "__typename": "Photo"
+              },
+              {
+                "url": "https://photos.zillowstatic.com/fp/4e0ea879bc2f5462e04c403d6d00df60-f_b.jpg",
+                "__typename": "Photo"
+              }
+            ],
+            "floorplanVRModel": null
+          },
+          {
+            "zpid": "2080237762",
+            "__typename": "FloorPlan",
+            "units": null,
+            "minPrice": 2685,
+            "maxPrice": 2685,
+            "baths": 1,
+            "beds": 1,
+            "sqft": 931,
+            "availableFrom": "0",
+            "photos": [
+              {
+                "url": "https://photos.zillowstatic.com/fp/00cf4662be17024999df43e4339e382a-f_a.jpg",
+                "__typename": "Photo"
+              },
+              {
+                "url": "https://photos.zillowstatic.com/fp/00cf4662be17024999df43e4339e382a-f_b.jpg",
+                "__typename": "Photo"
+              }
+            ],
+            "floorplanVRModel": null
+          },
+          {
+            "zpid": "2079387186",
+            "__typename": "FloorPlan",
+            "units": null,
+            "minPrice": 2786,
+            "maxPrice": 2786,
+            "baths": 1,
+            "beds": 1,
+            "sqft": 860,
+            "availableFrom": "0",
+            "photos": [
+              {
+                "url": "https://photos.zillowstatic.com/fp/42cccdd87de0ad2e4f68b40fec0c369b-f_a.jpg",
+                "__typename": "Photo"
+              },
+              {
+                "url": "https://photos.zillowstatic.com/fp/42cccdd87de0ad2e4f68b40fec0c369b-f_b.jpg",
+                "__typename": "Photo"
+              }
+            ],
+            "floorplanVRModel": null
+          },
+          {
+            "zpid": "2080682754",
+            "__typename": "FloorPlan",
+            "units": null,
+            "minPrice": 2820,
+            "maxPrice": 2820,
+            "baths": 2,
+            "beds": 2,
+            "sqft": 1139,
+            "availableFrom": "0",
+            "photos": [
+              {
+                "url": "https://photos.zillowstatic.com/fp/354e17b3359c7e8dcf1445f4f2569338-f_a.jpg",
+                "__typename": "Photo"
+              },
+              {
+                "url": "https://photos.zillowstatic.com/fp/354e17b3359c7e8dcf1445f4f2569338-f_b.jpg",
+                "__typename": "Photo"
+              }
+            ],
+            "floorplanVRModel": null
+          },
+          {
+            "zpid": "2080682696",
+            "__typename": "FloorPlan",
+            "units": null,
+            "minPrice": 3056,
+            "maxPrice": 3056,
+            "baths": 2,
+            "beds": 2,
+            "sqft": 1241,
+            "availableFrom": "0",
+            "photos": [
+              {
+                "url": "https://photos.zillowstatic.com/fp/ed8c1f24db2aa4df11432bc81f7094f3-f_a.jpg",
+                "__typename": "Photo"
+              },
+              {
+                "url": "https://photos.zillowstatic.com/fp/ed8c1f24db2aa4df11432bc81f7094f3-f_b.jpg",
+                "__typename": "Photo"
+              }
+            ],
+            "floorplanVRModel": null
+          },
+          {
+            "zpid": "2079965342",
+            "__typename": "FloorPlan",
+            "units": null,
+            "minPrice": 3120,
+            "maxPrice": 3120,
+            "baths": 2,
+            "beds": 2,
+            "sqft": 1053,
+            "availableFrom": "0",
+            "photos": [
+              {
+                "url": "https://photos.zillowstatic.com/fp/afae5ece48f076361735bfd92fba41f3-f_a.jpg",
+                "__typename": "Photo"
+              },
+              {
+                "url": "https://photos.zillowstatic.com/fp/afae5ece48f076361735bfd92fba41f3-f_b.jpg",
+                "__typename": "Photo"
+              }
+            ],
+            "floorplanVRModel": null
+          },
+          {
+            "zpid": "2079409362",
+            "__typename": "FloorPlan",
+            "units": null,
+            "minPrice": 3180,
+            "maxPrice": 3180,
+            "baths": 2,
+            "beds": 2,
+            "sqft": 1033,
+            "availableFrom": "0",
+            "photos": [
+              {
+                "url": "https://photos.zillowstatic.com/fp/afae5ece48f076361735bfd92fba41f3-f_a.jpg",
+                "__typename": "Photo"
+              },
+              {
+                "url": "https://photos.zillowstatic.com/fp/afae5ece48f076361735bfd92fba41f3-f_b.jpg",
+                "__typename": "Photo"
+              }
+            ],
+            "floorplanVRModel": null
+          },
+          {
+            "zpid": "2080632053",
+            "__typename": "FloorPlan",
+            "units": null,
+            "minPrice": 3245,
+            "maxPrice": 3245,
+            "baths": 2,
+            "beds": 2,
+            "sqft": 1123,
+            "availableFrom": "0",
+            "photos": [
+              {
+                "url": "https://photos.zillowstatic.com/fp/14d1c499852de4ee60d138dac1c3f589-f_a.jpg",
+                "__typename": "Photo"
+              },
+              {
+                "url": "https://photos.zillowstatic.com/fp/14d1c499852de4ee60d138dac1c3f589-f_b.jpg",
+                "__typename": "Photo"
+              }
+            ],
+            "floorplanVRModel": null
+          },
+          {
+            "zpid": "2080632051",
+            "__typename": "FloorPlan",
+            "units": null,
+            "minPrice": 3360,
+            "maxPrice": 3360,
+            "baths": 2,
+            "beds": 2,
+            "sqft": 1081,
+            "availableFrom": "0",
+            "photos": [
+              {
+                "url": "https://photos.zillowstatic.com/fp/31c5e64f5d4a95628720ac7434224dae-f_a.jpg",
+                "__typename": "Photo"
+              },
+              {
+                "url": "https://photos.zillowstatic.com/fp/31c5e64f5d4a95628720ac7434224dae-f_b.jpg",
+                "__typename": "Photo"
+              }
+            ],
+            "floorplanVRModel": null
+          },
+          {
+            "zpid": "2080632052",
+            "__typename": "FloorPlan",
+            "units": null,
+            "minPrice": 3375,
+            "maxPrice": 3375,
+            "baths": 2,
+            "beds": 2,
+            "sqft": 1309,
+            "availableFrom": "0",
+            "photos": [
+              {
+                "url": "https://photos.zillowstatic.com/fp/3442899aacdb99e7f3eab422a5ae4ffd-f_a.jpg",
+                "__typename": "Photo"
+              },
+              {
+                "url": "https://photos.zillowstatic.com/fp/3442899aacdb99e7f3eab422a5ae4ffd-f_b.jpg",
+                "__typename": "Photo"
+              }
+            ],
+            "floorplanVRModel": null
+          },
+          {
+            "zpid": "2080074496",
+            "__typename": "FloorPlan",
+            "units": null,
+            "minPrice": 3380,
+            "maxPrice": 3380,
+            "baths": 2,
+            "beds": 2,
+            "sqft": 1139,
+            "availableFrom": "0",
+            "photos": [
+              {
+                "url": "https://photos.zillowstatic.com/fp/6cce47d45715a57c624f785625ab20c0-f_a.jpg",
+                "__typename": "Photo"
+              },
+              {
+                "url": "https://photos.zillowstatic.com/fp/6cce47d45715a57c624f785625ab20c0-f_b.jpg",
+                "__typename": "Photo"
+              }
+            ],
+            "floorplanVRModel": null
+          },
+          {
+            "zpid": "2080211320",
+            "__typename": "FloorPlan",
+            "units": null,
+            "minPrice": 3400,
+            "maxPrice": 3400,
+            "baths": 2,
+            "beds": 2,
+            "sqft": 1256,
+            "availableFrom": "0",
+            "photos": [
+              {
+                "url": "https://photos.zillowstatic.com/fp/3f368e98144a448158cf750c1b8df24f-f_a.jpg",
+                "__typename": "Photo"
+              },
+              {
+                "url": "https://photos.zillowstatic.com/fp/3f368e98144a448158cf750c1b8df24f-f_b.jpg",
+                "__typename": "Photo"
+              }
+            ],
+            "floorplanVRModel": null
+          },
+          {
+            "zpid": "2077839462",
+            "__typename": "FloorPlan",
+            "units": null,
+            "minPrice": 3484,
+            "maxPrice": 3484,
+            "baths": 2,
+            "beds": 2,
+            "sqft": 1103,
+            "availableFrom": "0",
+            "photos": [
+              {
+                "url": "https://photos.zillowstatic.com/fp/8cf34ee5538e622880b917d9e809db62-f_a.jpg",
+                "__typename": "Photo"
+              },
+              {
+                "url": "https://photos.zillowstatic.com/fp/8cf34ee5538e622880b917d9e809db62-f_b.jpg",
+                "__typename": "Photo"
+              }
+            ],
+            "floorplanVRModel": null
+          },
+          {
+            "zpid": "2080632048",
+            "__typename": "FloorPlan",
+            "units": null,
+            "minPrice": 3495,
+            "maxPrice": 3495,
+            "baths": 2,
+            "beds": 2,
+            "sqft": 1112,
+            "availableFrom": "0",
+            "photos": [
+              {
+                "url": "https://photos.zillowstatic.com/fp/e48692cd077d410754a8fd6a637cc12a-f_a.jpg",
+                "__typename": "Photo"
+              },
+              {
+                "url": "https://photos.zillowstatic.com/fp/e48692cd077d410754a8fd6a637cc12a-f_b.jpg",
+                "__typename": "Photo"
+              }
+            ],
+            "floorplanVRModel": null
+          },
+          {
+            "zpid": "2080632054",
+            "__typename": "FloorPlan",
+            "units": null,
+            "minPrice": 3535,
+            "maxPrice": 3535,
+            "baths": 2,
+            "beds": 2,
+            "sqft": 1186,
+            "availableFrom": "0",
+            "photos": [
+              {
+                "url": "https://photos.zillowstatic.com/fp/e7bcadf5fbf6da775ff87d773ebf0d8d-f_a.jpg",
+                "__typename": "Photo"
+              },
+              {
+                "url": "https://photos.zillowstatic.com/fp/e7bcadf5fbf6da775ff87d773ebf0d8d-f_b.jpg",
+                "__typename": "Photo"
+              }
+            ],
+            "floorplanVRModel": null
+          },
+          {
+            "zpid": "2079456507",
+            "__typename": "FloorPlan",
+            "units": null,
+            "minPrice": 3543,
+            "maxPrice": 3543,
+            "baths": 2,
+            "beds": 2,
+            "sqft": 1114,
+            "availableFrom": "0",
+            "photos": [
+              {
+                "url": "https://photos.zillowstatic.com/fp/211d88e850772cfaa49892b16545b2b8-f_a.jpg",
+                "__typename": "Photo"
+              },
+              {
+                "url": "https://photos.zillowstatic.com/fp/211d88e850772cfaa49892b16545b2b8-f_b.jpg",
+                "__typename": "Photo"
+              }
+            ],
+            "floorplanVRModel": null
+          },
+          {
+            "zpid": "2080682698",
+            "__typename": "FloorPlan",
+            "units": null,
+            "minPrice": 3581,
+            "maxPrice": 3581,
+            "baths": 2,
+            "beds": 2,
+            "sqft": 1247,
+            "availableFrom": "0",
+            "photos": [
+              {
+                "url": "https://photos.zillowstatic.com/fp/55be1af92e6e147bfa0931ebc6d92aa5-f_a.jpg",
+                "__typename": "Photo"
+              },
+              {
+                "url": "https://photos.zillowstatic.com/fp/55be1af92e6e147bfa0931ebc6d92aa5-f_b.jpg",
+                "__typename": "Photo"
+              }
+            ],
+            "floorplanVRModel": null
+          },
+          {
+            "zpid": "2078419731",
+            "__typename": "FloorPlan",
+            "units": null,
+            "minPrice": 4010,
+            "maxPrice": 4010,
+            "baths": 2,
+            "beds": 2,
+            "sqft": 1426,
+            "availableFrom": "0",
+            "photos": [
+              {
+                "url": "https://photos.zillowstatic.com/fp/7017df9fea8c0b81e13d182db3904132-f_a.jpg",
+                "__typename": "Photo"
+              },
+              {
+                "url": "https://photos.zillowstatic.com/fp/7017df9fea8c0b81e13d182db3904132-f_b.jpg",
+                "__typename": "Photo"
+              }
+            ],
+            "floorplanVRModel": null
+          },
+          {
+            "zpid": "2095527410",
+            "__typename": "FloorPlan",
+            "units": null,
+            "minPrice": 4026,
+            "maxPrice": 4026,
+            "baths": 2,
+            "beds": 2,
+            "sqft": 1343,
+            "availableFrom": "0",
+            "photos": [
+              {
+                "url": "https://photos.zillowstatic.com/fp/842be83eaa8f24900602fbf8d3a9fc51-f_a.jpg",
+                "__typename": "Photo"
+              },
+              {
+                "url": "https://photos.zillowstatic.com/fp/842be83eaa8f24900602fbf8d3a9fc51-f_b.jpg",
+                "__typename": "Photo"
+              }
+            ],
+            "floorplanVRModel": null
+          },
+          {
+            "zpid": "2080682694",
+            "__typename": "FloorPlan",
+            "units": null,
+            "minPrice": 5000,
+            "maxPrice": 5000,
+            "baths": 2,
+            "beds": 3,
+            "sqft": 1380,
+            "availableFrom": "0",
+            "photos": [
+              {
+                "url": "https://photos.zillowstatic.com/fp/9e338e6b587ffbdbbcc13cc0d7cc25ca-f_a.jpg",
+                "__typename": "Photo"
+              },
+              {
+                "url": "https://photos.zillowstatic.com/fp/9e338e6b587ffbdbbcc13cc0d7cc25ca-f_b.jpg",
+                "__typename": "Photo"
+              }
+            ],
+            "floorplanVRModel": null
+          }
+        ],
+        "isRentalsLeadCapMet": null,
+        "latitude": 37.776943,
+        "longitude": -122.392804,
+        "nearbyCities": [
+          {
+            "buildingSearchUrl": {
+              "path": "/san-francisco-ca/apartments/",
+              "__typename": "UrlObjectType"
+            },
+            "name": "San Francisco",
+            "__typename": "Region"
+          }
+        ],
+        "nearbyNeighborhoods": [
+          {
+            "buildingSearchUrl": {
+              "path": "/bernal-heights-san-francisco-ca/apartments/",
+              "__typename": "UrlObjectType"
+            },
+            "name": "Bernal Heights",
+            "__typename": "Region"
+          },
+          {
+            "buildingSearchUrl": {
+              "path": "/castro-upper-market-san-francisco-ca/apartments/",
+              "__typename": "UrlObjectType"
+            },
+            "name": "Castro-Upper Market",
+            "__typename": "Region"
+          },
+          {
+            "buildingSearchUrl": {
+              "path": "/eldton-san-francisco-ca/apartments/",
+              "__typename": "UrlObjectType"
+            },
+            "name": "Eldton",
+            "__typename": "Region"
+          },
+          {
+            "buildingSearchUrl": {
+              "path": "/excelsior-san-francisco-ca/apartments/",
+              "__typename": "UrlObjectType"
+            },
+            "name": "Excelsior",
+            "__typename": "Region"
+          },
+          {
+            "buildingSearchUrl": {
+              "path": "/fort-winfield-scott-san-francisco-ca/apartments/",
+              "__typename": "UrlObjectType"
+            },
+            "name": "Fort Winfield Scott",
+            "__typename": "Region"
+          },
+          {
+            "buildingSearchUrl": {
+              "path": "/inner-richmond-san-francisco-ca/apartments/",
+              "__typename": "UrlObjectType"
+            },
+            "name": "Inner Richmond",
+            "__typename": "Region"
+          },
+          {
+            "buildingSearchUrl": {
+              "path": "/little-osaka-san-francisco-ca/apartments/",
+              "__typename": "UrlObjectType"
+            },
+            "name": "Little Osaka",
+            "__typename": "Region"
+          },
+          {
+            "buildingSearchUrl": {
+              "path": "/marina-district-san-francisco-ca/apartments/",
+              "__typename": "UrlObjectType"
+            },
+            "name": "Marina District",
+            "__typename": "Region"
+          },
+          {
+            "buildingSearchUrl": {
+              "path": "/mission-san-francisco-ca/apartments/",
+              "__typename": "UrlObjectType"
+            },
+            "name": "Mission",
+            "__typename": "Region"
+          },
+          {
+            "buildingSearchUrl": {
+              "path": "/north-point-public-housing-san-francisco-ca/apartments/",
+              "__typename": "UrlObjectType"
+            },
+            "name": "North Point Public Housing",
+            "__typename": "Region"
+          }
+        ],
+        "country": "USA",
+        "nearbyZipcodes": [
+          {
+            "buildingSearchUrl": {
+              "path": "/san-francisco-ca-94102/apartments/",
+              "__typename": "UrlObjectType"
+            },
+            "name": "94102",
+            "__typename": "Region"
+          },
+          {
+            "buildingSearchUrl": {
+              "path": "/san-francisco-ca-94103/apartments/",
+              "__typename": "UrlObjectType"
+            },
+            "name": "94103",
+            "__typename": "Region"
+          },
+          {
+            "buildingSearchUrl": {
+              "path": "/san-francisco-ca-94109/apartments/",
+              "__typename": "UrlObjectType"
+            },
+            "name": "94109",
+            "__typename": "Region"
+          },
+          {
+            "buildingSearchUrl": {
+              "path": "/san-francisco-ca-94110/apartments/",
+              "__typename": "UrlObjectType"
+            },
+            "name": "94110",
+            "__typename": "Region"
+          },
+          {
+            "buildingSearchUrl": {
+              "path": "/san-francisco-ca-94112/apartments/",
+              "__typename": "UrlObjectType"
+            },
+            "name": "94112",
+            "__typename": "Region"
+          },
+          {
+            "buildingSearchUrl": {
+              "path": "/san-francisco-ca-94115/apartments/",
+              "__typename": "UrlObjectType"
+            },
+            "name": "94115",
+            "__typename": "Region"
+          },
+          {
+            "buildingSearchUrl": {
+              "path": "/san-francisco-ca-94117/apartments/",
+              "__typename": "UrlObjectType"
+            },
+            "name": "94117",
+            "__typename": "Region"
+          },
+          {
+            "buildingSearchUrl": {
+              "path": "/san-francisco-ca-94118/apartments/",
+              "__typename": "UrlObjectType"
+            },
+            "name": "94118",
+            "__typename": "Region"
+          },
+          {
+            "buildingSearchUrl": {
+              "path": "/san-francisco-ca-94121/apartments/",
+              "__typename": "UrlObjectType"
+            },
+            "name": "94121",
+            "__typename": "Region"
+          },
+          {
+            "buildingSearchUrl": {
+              "path": "/san-francisco-ca-94122/apartments/",
+              "__typename": "UrlObjectType"
+            },
+            "name": "94122",
+            "__typename": "Region"
+          }
+        ],
+        "nearbyBuildingLinks": [
+          {
+            "buildingUrl": {
+              "path": "/b/1155-hayes-st-san-francisco-ca-5j4CRC/",
+              "text": "1155 Hayes St",
+              "__typename": "UrlObjectType"
+            },
+            "__typename": "NearbyBuildingLink"
+          },
+          {
+            "buildingUrl": {
+              "path": "/b/613-22nd-street-oakland-ca-9NV5HK/",
+              "text": "613 22nd Street",
+              "__typename": "UrlObjectType"
+            },
+            "__typename": "NearbyBuildingLink"
+          },
+          {
+            "buildingUrl": {
+              "path": "/b/3-bed,-2.0-bath,-1000-sqft,-%243,250-oakland-ca-9NTfrf/",
+              "text": "3 bed, 2.0 bath, 1000 sqft, $3,250",
+              "__typename": "UrlObjectType"
+            },
+            "__typename": "NearbyBuildingLink"
+          },
+          {
+            "buildingUrl": {
+              "path": "/b/the-landing-san-francisco-ca-9NK3gC/",
+              "text": "The Landing",
+              "__typename": "UrlObjectType"
+            },
+            "__typename": "NearbyBuildingLink"
+          },
+          {
+            "buildingUrl": {
+              "path": "/b/ivy-hill-walnut-creek-ca-5XjxD9/",
+              "text": "Ivy Hill",
+              "__typename": "UrlObjectType"
+            },
+            "__typename": "NearbyBuildingLink"
+          },
+          {
+            "buildingUrl": {
+              "path": "/b/domus-on-the-boulevard-mountain-view-ca-5kLRxK/",
+              "text": "Domus on the Boulevard",
+              "__typename": "UrlObjectType"
+            },
+            "__typename": "NearbyBuildingLink"
+          },
+          {
+            "buildingUrl": {
+              "path": "/b/logan-park-fremont-ca-5YvjTk/",
+              "text": "Logan Park",
+              "__typename": "UrlObjectType"
+            },
+            "__typename": "NearbyBuildingLink"
+          },
+          {
+            "buildingUrl": {
+              "path": "/b/rica-vista-alameda-ca-5Xk3WY/",
+              "text": "Rica Vista",
+              "__typename": "UrlObjectType"
+            },
+            "__typename": "NearbyBuildingLink"
+          },
+          {
+            "buildingUrl": {
+              "path": "/b/lorenzo-commons-san-lorenzo-ca-5XjSYp/",
+              "text": "Lorenzo Commons",
+              "__typename": "UrlObjectType"
+            },
+            "__typename": "NearbyBuildingLink"
+          },
+          {
+            "buildingUrl": {
+              "path": "/b/villa-del-sol-sunnyvale-ca-5XjR5H/",
+              "text": "Villa Del Sol",
+              "__typename": "UrlObjectType"
+            },
+            "__typename": "NearbyBuildingLink"
+          }
+        ],
+        "showAlnNotice": false,
+        "comps": {
+          "compHomes": null,
+          "__typename": "Comps",
+          "compBuildings": [
+            {
+              "lotId": "1001427194",
+              "__typename": "BuildingCard",
+              "bdpLink": "/b/arc-light-san-francisco-ca-5XhzXg/",
+              "bedroomGroups": [
+                {
+                  "beds": "0",
+                  "__typename": "BedRoomGroup"
+                },
+                {
+                  "beds": "1",
+                  "__typename": "BedRoomGroup"
+                },
+                {
+                  "beds": "2",
+                  "__typename": "BedRoomGroup"
+                }
+              ],
+              "buildingAddress": "21 Clarence Pl, San Francisco, CA",
+              "buildingName": "Arc Light",
+              "maxPrice": 3767,
+              "minBaths": 1,
+              "minBeds": 0,
+              "minLivingArea": 330,
+              "minPrice": 2584,
+              "photo": {
+                "url": "https://photos.zillowstatic.com/p_d/ISeovgx2nyeb3n0000000000.jpg",
+                "__typename": "Photo"
+              },
+              "photoCount": "23 photos",
+              "showUpdateTime": true
+            },
+            {
+              "lotId": "1001466358",
+              "__typename": "BuildingCard",
+              "bdpLink": "/b/channel-mission-bay-san-francisco-ca-5XjKrx/",
+              "bedroomGroups": [
+                {
+                  "beds": "0",
+                  "__typename": "BedRoomGroup"
+                },
+                {
+                  "beds": "1",
+                  "__typename": "BedRoomGroup"
+                },
+                {
+                  "beds": "2",
+                  "__typename": "BedRoomGroup"
+                }
+              ],
+              "buildingAddress": "185 Channel St, San Francisco, CA",
+              "buildingName": "Channel Mission Bay",
+              "maxPrice": 5686,
+              "minBaths": 1,
+              "minBeds": 0,
+              "minLivingArea": 456,
+              "minPrice": 2299,
+              "photo": {
+                "url": "https://photos.zillowstatic.com/p_d/IS7afwwyc7y6r51000000000.jpg",
+                "__typename": "Photo"
+              },
+              "photoCount": "28 photos",
+              "showUpdateTime": true
+            },
+            {
+              "lotId": "1150348230",
+              "__typename": "BuildingCard",
+              "bdpLink": "/b/azure-san-francisco-ca-65Xp8V/",
+              "bedroomGroups": [
+                {
+                  "beds": "1",
+                  "__typename": "BedRoomGroup"
+                },
+                {
+                  "beds": "2",
+                  "__typename": "BedRoomGroup"
+                }
+              ],
+              "buildingAddress": "690 Long Bridge St, San Francisco, CA",
+              "buildingName": "Azure",
+              "maxPrice": 4471,
+              "minBaths": 1,
+              "minBeds": 1,
+              "minLivingArea": 690,
+              "minPrice": 2800,
+              "photo": {
+                "url": "https://photos.zillowstatic.com/p_d/IS7u6b2xevpa8e0000000000.jpg",
+                "__typename": "Photo"
+              },
+              "photoCount": "48 photos",
+              "showUpdateTime": true
+            },
+            {
+              "lotId": "2083111115",
+              "__typename": "BuildingCard",
+              "bdpLink": "/b/mission-bay-by-windsor-san-francisco-ca-9NM9Sk/",
+              "bedroomGroups": [
+                {
+                  "beds": "1",
+                  "__typename": "BedRoomGroup"
+                },
+                {
+                  "beds": "2",
+                  "__typename": "BedRoomGroup"
+                },
+                {
+                  "beds": "3",
+                  "__typename": "BedRoomGroup"
+                }
+              ],
+              "buildingAddress": "360 Berry St, San Francisco, CA",
+              "buildingName": "Mission Bay by Windsor",
+              "maxPrice": 5015,
+              "minBaths": 1,
+              "minBeds": 1,
+              "minLivingArea": 670,
+              "minPrice": 2385,
+              "photo": {
+                "url": "https://photos.zillowstatic.com/p_d/ISfsanfm6enxhx1000000000.jpg",
+                "__typename": "Photo"
+              },
+              "photoCount": "51 photos",
+              "showUpdateTime": true
+            },
+            {
+              "lotId": "1001465668",
+              "__typename": "BuildingCard",
+              "bdpLink": "/b/venue-san-francisco-ca-5XjKYs/",
+              "bedroomGroups": [
+                {
+                  "beds": "0",
+                  "__typename": "BedRoomGroup"
+                },
+                {
+                  "beds": "1",
+                  "__typename": "BedRoomGroup"
+                },
+                {
+                  "beds": "2",
+                  "__typename": "BedRoomGroup"
+                }
+              ],
+              "buildingAddress": "1155 4th St, San Francisco, CA",
+              "buildingName": "Venue",
+              "maxPrice": 4937,
+              "minBaths": 1,
+              "minBeds": 0,
+              "minLivingArea": 619,
+              "minPrice": 2722,
+              "photo": {
+                "url": "https://photos.zillowstatic.com/p_d/ISf4gncouqmalt0000000000.jpg",
+                "__typename": "Photo"
+              },
+              "photoCount": "18 photos",
+              "showUpdateTime": true
+            },
+            {
+              "lotId": "1001483972",
+              "__typename": "BuildingCard",
+              "bdpLink": "/b/77-bluxome-san-francisco-ca-5XjTCQ/",
+              "bedroomGroups": [
+                {
+                  "beds": "0",
+                  "__typename": "BedRoomGroup"
+                }
+              ],
+              "buildingAddress": "77 Bluxome St, San Francisco, CA",
+              "buildingName": "77 Bluxome",
+              "maxPrice": 1985,
+              "minBaths": 1,
+              "minBeds": 0,
+              "minLivingArea": 231,
+              "minPrice": 1755,
+              "photo": {
+                "url": "https://photos.zillowstatic.com/p_d/ISrdjxt8kiey901000000000.jpg",
+                "__typename": "Photo"
+              },
+              "photoCount": "8 photos",
+              "showUpdateTime": true
+            },
+            {
+              "lotId": "1001479580",
+              "__typename": "BuildingCard",
+              "bdpLink": "/b/strata-at-mission-bay-san-francisco-ca-5XjRMn/",
+              "bedroomGroups": [
+                {
+                  "beds": "1",
+                  "__typename": "BedRoomGroup"
+                },
+                {
+                  "beds": "2",
+                  "__typename": "BedRoomGroup"
+                }
+              ],
+              "buildingAddress": "1201 4th St, San Francisco, CA",
+              "buildingName": "Strata at Mission Bay",
+              "maxPrice": 4919,
+              "minBaths": 1,
+              "minBeds": 1,
+              "minLivingArea": 650,
+              "minPrice": 2631,
+              "photo": {
+                "url": "https://photos.zillowstatic.com/p_d/ISblazlya3tvkq1000000000.jpg",
+                "__typename": "Photo"
+              },
+              "photoCount": "21 photos",
+              "showUpdateTime": true
+            },
+            {
+              "lotId": "1001482983",
+              "__typename": "BuildingCard",
+              "bdpLink": "/b/mb360-san-francisco-ca-5XjSnF/",
+              "bedroomGroups": [
+                {
+                  "beds": "0",
+                  "__typename": "BedRoomGroup"
+                },
+                {
+                  "beds": "1",
+                  "__typename": "BedRoomGroup"
+                },
+                {
+                  "beds": "2",
+                  "__typename": "BedRoomGroup"
+                }
+              ],
+              "buildingAddress": "1200 4th St, San Francisco, CA",
+              "buildingName": "MB360",
+              "maxPrice": 4120,
+              "minBaths": 1,
+              "minBeds": 0,
+              "minLivingArea": 529,
+              "minPrice": 2228,
+              "photo": {
+                "url": "https://photos.zillowstatic.com/p_d/ISzbzublt5olqb1000000000.jpg",
+                "__typename": "Photo"
+              },
+              "photoCount": "28 photos",
+              "showUpdateTime": true
+            }
+          ]
+        },
+        "homeRecommendations": {
+          "blendedRecs": [],
+          "displayShort": "",
+          "__typename": "HomeRecommendation"
+        },
+        "isLandlordLiaisonProgram": false,
+        "isLowIncome": null,
+        "isSeniorHousing": null,
+        "isStudentHousing": null,
+        "ppcLink": null,
+        "reviewsInfo": null,
+        "mapTileGoogleMapUrlLocationModule": "https://maps.googleapis.com/maps/api/staticmap?center=37.776943,-122.392804&zoom=14&size=427x216&maptype=roadmap&key=AIzaSyBdka2nwqeknSXr-TkzLcVMbaJEx4CkZEM&scale=1&signature=gAPdUBpSZifbXXvXYzbypB4gdHo=",
+        "mapTileGoogleMapUrlFullWidthMax": "https://maps.googleapis.com/maps/api/staticmap?center=37.776943,-122.392804&zoom=16&size=1920x234&maptype=roadmap&key=AIzaSyBdka2nwqeknSXr-TkzLcVMbaJEx4CkZEM&scale=1&signature=6onOb9LO0ByKm2R1mvmL774AHWU=",
+        "streetViewMetadataUrlMediaWallLatLong": "https://maps.googleapis.com/maps/api/streetview/metadata?location=37.776943,-122.392804&key=AIzaSyBdka2nwqeknSXr-TkzLcVMbaJEx4CkZEM&source=outdoor&signature=A8setQpoNlH-xKNXxU86QY_jTRc=",
+        "streetViewMetadataUrlMediaWallAddress": "https://maps.googleapis.com/maps/api/streetview/metadata?location=255%20King%20St%2C%20San%20Francisco%2C%20CA%2094107&key=AIzaSyBdka2nwqeknSXr-TkzLcVMbaJEx4CkZEM&source=outdoor&signature=HyzA71EGp6mYzOWeUNuI6QWNytQ=",
+        "streetViewTileImageUrlLocationModuleLatLong": "https://maps.googleapis.com/maps/api/streetview?location=37.776943,-122.392804&size=427x115&key=AIzaSyBdka2nwqeknSXr-TkzLcVMbaJEx4CkZEM&source=outdoor&signature=ur3KtYGEw1yPHNH8Bg5T8V_PD44=",
+        "streetViewTileImageUrlLocationModuleAddress": "https://maps.googleapis.com/maps/api/streetview?location=255%20King%20St%2C%20San%20Francisco%2C%20CA%2094107&size=427x115&key=AIzaSyBdka2nwqeknSXr-TkzLcVMbaJEx4CkZEM&source=outdoor&signature=g6SNz6_k6udbU6Ksfc4zeHFqSz0=",
+        "streetViewTileImageUrlHalfWidthLatLong": "https://maps.googleapis.com/maps/api/streetview?location=37.776943,-122.392804&size=512x234&key=AIzaSyBdka2nwqeknSXr-TkzLcVMbaJEx4CkZEM&source=outdoor&signature=KuQH0k-eNQfnrAw0EaraYnNq_VI=",
+        "streetViewTileImageUrlHalfWidthAddress": "https://maps.googleapis.com/maps/api/streetview?location=255%20King%20St%2C%20San%20Francisco%2C%20CA%2094107&size=512x234&key=AIzaSyBdka2nwqeknSXr-TkzLcVMbaJEx4CkZEM&source=outdoor&signature=f7jvKt3Oqis5Uh_tKpLS7uYafaE=",
+        "photoCount": 34,
+        "hasPublicVideo": false,
+        "amenitiesVRModels": null,
+        "galleryPhotos": [
+          {
+            "url": "https://photos.zillowstatic.com/fp/b50170aa78c04b4f290a6b82d675ceaf-p_f.jpg",
+            "width": 1025,
+            "height": 768,
+            "caption": "Finish Package IV Kitchen with quartz countertops, tile backsplash, and stainless steel appliances (Phase I)",
+            "__typename": "Photo"
+          },
+          {
+            "url": "https://photos.zillowstatic.com/fp/7c32069573215ca46ff7b90a7e1e1387-p_f.jpg",
+            "width": 1025,
+            "height": 768,
+            "caption": "Finish Package IV Kitchen with stainless steel appliances and hard surface flooring (Phase I)",
+            "__typename": "Photo"
+          },
+          {
+            "url": "https://photos.zillowstatic.com/fp/dbbf1fab8766201521c3524af2880c23-p_f.jpg",
+            "width": 1025,
+            "height": 768,
+            "caption": "Bedroom",
+            "__typename": "Photo"
+          },
+          {
+            "url": "https://photos.zillowstatic.com/fp/18936b98130bd6c7123d1e3298793522-p_f.jpg",
+            "width": 1025,
+            "height": 768,
+            "caption": "In-home washer/dryer",
+            "__typename": "Photo"
+          },
+          {
+            "url": "https://photos.zillowstatic.com/fp/24bae9a6b48f95a4fbca54ae0d63eae6-p_f.jpg",
+            "width": 1025,
+            "height": 768,
+            "caption": "Finish Package IV Bath (Phase I)",
+            "__typename": "Photo"
+          },
+          {
+            "url": "https://photos.zillowstatic.com/fp/9044432da55ac82a00168f8b41a3c40c-p_f.jpg",
+            "width": 1025,
+            "height": 768,
+            "caption": "Finish Package III Kitchen with granite countertops, espresso cabinetry, and hard surface flooring (Phase III)",
+            "__typename": "Photo"
+          },
+          {
+            "url": "https://photos.zillowstatic.com/fp/87e43a27d028d56a418994c4d02e103c-p_f.jpg",
+            "width": 1025,
+            "height": 768,
+            "caption": "Finish Package III Kitchen, living and dining areas with hard surface flooring (Phase III)",
+            "__typename": "Photo"
+          },
+          {
+            "url": "https://photos.zillowstatic.com/fp/e4cee4a8df408d0164b93ea547e5242b-p_f.jpg",
+            "width": 1025,
+            "height": 768,
+            "caption": "Bedroom",
+            "__typename": "Photo"
+          },
+          {
+            "url": "https://photos.zillowstatic.com/fp/a7e9d1892b99bfe98a887f522f92488c-p_f.jpg",
+            "width": 1025,
+            "height": 768,
+            "caption": "Finish Package III Bath (Phase III)",
+            "__typename": "Photo"
+          },
+          {
+            "url": "https://photos.zillowstatic.com/fp/6beabe3b3d09f26abf417201918d0f96-p_f.jpg",
+            "width": 1025,
+            "height": 768,
+            "caption": "Finish Package II Kitchen, living, and dining areas (Phase I)",
+            "__typename": "Photo"
+          },
+          {
+            "url": "https://photos.zillowstatic.com/fp/a7c490ac23d9f1dfee2abefa4773e99d-p_f.jpg",
+            "width": 1025,
+            "height": 768,
+            "caption": "Finish Package II Living and dining areas (Phase I)",
+            "__typename": "Photo"
+          },
+          {
+            "url": "https://photos.zillowstatic.com/fp/a03c617315e8ad6a1d0f93636aff0580-p_f.jpg",
+            "width": 1025,
+            "height": 768,
+            "caption": "Finish Package II Bath (Phase I)",
+            "__typename": "Photo"
+          },
+          {
+            "url": "https://photos.zillowstatic.com/fp/31010684bed651318ced47f6fc8286c5-p_f.jpg",
+            "width": 1025,
+            "height": 768,
+            "caption": "Furnished apartments available",
+            "__typename": "Photo"
+          },
+          {
+            "url": "https://photos.zillowstatic.com/fp/500e075f6dd2b3675060ab8d8299e04d-p_f.jpg",
+            "width": 1025,
+            "height": 768,
+            "caption": "Furnished apartments available",
+            "__typename": "Photo"
+          },
+          {
+            "url": "https://photos.zillowstatic.com/fp/ed2d47eb91fb9c8e1290db4899002944-p_f.jpg",
+            "width": 1025,
+            "height": 768,
+            "caption": "Fitness center (Phase I)",
+            "__typename": "Photo"
+          },
+          {
+            "url": "https://photos.zillowstatic.com/fp/45c73156f9e8276e8d29b0f625ce703b-p_f.jpg",
+            "width": 1025,
+            "height": 768,
+            "caption": "Fitness center (Phase I)",
+            "__typename": "Photo"
+          },
+          {
+            "url": "https://photos.zillowstatic.com/fp/b7aa85b945ea840ce995d93b6c0d312b-p_f.jpg",
+            "width": 1025,
+            "height": 768,
+            "caption": "Fitness center (Phase I)",
+            "__typename": "Photo"
+          },
+          {
+            "url": "https://photos.zillowstatic.com/fp/a19e19f13a631dfa45621379747486f1-p_f.jpg",
+            "width": 1025,
+            "height": 768,
+            "caption": "Studio with spin bikes (Phase I)",
+            "__typename": "Photo"
+          },
+          {
+            "url": "https://photos.zillowstatic.com/fp/edfc44a3522791cd0a2a66e4b0596d5b-p_f.jpg",
+            "width": 1025,
+            "height": 768,
+            "caption": "Two-level Fitness center (Phase III)",
+            "__typename": "Photo"
+          },
+          {
+            "url": "https://photos.zillowstatic.com/fp/536636fc28e2a0a45097bd100f7c03d1-p_f.jpg",
+            "width": 1025,
+            "height": 768,
+            "caption": "Lounge with game area (Phase I)",
+            "__typename": "Photo"
+          },
+          {
+            "url": "https://photos.zillowstatic.com/fp/cfe1ba61b63a64017ce6fd6756190124-p_f.jpg",
+            "width": 1025,
+            "height": 768,
+            "caption": "Lounge with co-work spaces (Phase I)",
+            "__typename": "Photo"
+          },
+          {
+            "url": "https://photos.zillowstatic.com/fp/fb83e16b63d0d777fbe61c3ec606a970-p_f.jpg",
+            "width": 1025,
+            "height": 768,
+            "caption": "Conference room (Phase I)",
+            "__typename": "Photo"
+          },
+          {
+            "url": "https://photos.zillowstatic.com/fp/52831e08c3a9b14b21a2ffb6d294ff37-p_f.jpg",
+            "width": 1025,
+            "height": 768,
+            "caption": "Coming soon refinished basketball court (Phase II) Rendering",
+            "__typename": "Photo"
+          },
+          {
+            "url": "https://photos.zillowstatic.com/fp/989e8b9f69042bbad565c31c4e949c49-p_f.jpg",
+            "width": 1025,
+            "height": 768,
+            "caption": "Coming soon updated game room with new seating (Phase II) Rendering",
+            "__typename": "Photo"
+          },
+          {
+            "url": "https://photos.zillowstatic.com/fp/ecb8822e2945fa9aceda1524fbc6c380-p_f.jpg",
+            "width": 1025,
+            "height": 768,
+            "caption": "Coming soon updated lobby (Phase II) Rendering",
+            "__typename": "Photo"
+          },
+          {
+            "url": "https://photos.zillowstatic.com/fp/178b971b5b6dfade01fe0a6e4376ce30-p_f.jpg",
+            "width": 1025,
+            "height": 768,
+            "caption": "Lobby (Phase I)",
+            "__typename": "Photo"
+          },
+          {
+            "url": "https://photos.zillowstatic.com/fp/d747991634a22a8bedbe4c6e8e29c497-p_f.jpg",
+            "width": 1025,
+            "height": 768,
+            "caption": "Lobby (Phase I)",
+            "__typename": "Photo"
+          },
+          {
+            "url": "https://photos.zillowstatic.com/fp/7502320aa03d4f92732944e5b545f8e3-p_f.jpg",
+            "width": 1025,
+            "height": 768,
+            "caption": "19th Floor Outdoor deck (Phase I)",
+            "__typename": "Photo"
+          },
+          {
+            "url": "https://photos.zillowstatic.com/fp/4b604e692e1e1f8a1410705ceb91ec58-p_f.jpg",
+            "width": 1025,
+            "height": 768,
+            "caption": "Courtyard with grilling stations and lounge seating (Phase I)",
+            "__typename": "Photo"
+          },
+          {
+            "url": "https://photos.zillowstatic.com/fp/69b07006a57b72d18406567d86dcd08c-p_f.jpg",
+            "width": 1025,
+            "height": 768,
+            "caption": "Courtyard with firepit (Phase II)",
+            "__typename": "Photo"
+          },
+          {
+            "url": "https://photos.zillowstatic.com/fp/27d2a59ea52fc9bafd88bfd93f053860-p_f.jpg",
+            "width": 1025,
+            "height": 768,
+            "caption": "Outdoor deck with grilling stations (Phase II)",
+            "__typename": "Photo"
+          },
+          {
+            "url": "https://photos.zillowstatic.com/fp/433493e63299ee58e9694b7e7bf54bad-p_f.jpg",
+            "width": 1025,
+            "height": 768,
+            "caption": "Building exterior",
+            "__typename": "Photo"
+          },
+          {
+            "url": "https://photos.zillowstatic.com/fp/585a036d16d212ba6b7d489a1275618e-p_f.jpg",
+            "width": 1025,
+            "height": 768,
+            "caption": "Building exterior",
+            "__typename": "Photo"
+          },
+          {
+            "url": "https://photos.zillowstatic.com/fp/6121f23d8e5fce8376fa9ac719a75325-p_f.jpg",
+            "width": 1025,
+            "height": 768,
+            "caption": "Views",
+            "__typename": "Photo"
+          }
+        ],
+        "primaryPublicVideo": null,
+        "assignedSchools": [
+          {
+            "distance": 1,
+            "name": "Daniel Webster Elementary School",
+            "rating": 5,
+            "level": "Elementary",
+            "studentsPerTeacher": 13,
+            "assigned": null,
+            "grades": "K-5",
+            "link": "https://www.greatschools.org/school?id=06451&state=CA",
+            "type": "Public",
+            "size": 326,
+            "totalCount": 1,
+            "isAssigned": true,
+            "__typename": "School"
+          },
+          {
+            "distance": 3,
+            "name": "Lick (James) Middle School",
+            "rating": 2,
+            "level": "Middle",
+            "studentsPerTeacher": 17,
+            "assigned": null,
+            "grades": "6-8",
+            "link": "https://www.greatschools.org/school?id=06392&state=CA",
+            "type": "Public",
+            "size": 568,
+            "totalCount": 1,
+            "isAssigned": true,
+            "__typename": "School"
+          },
+          {
+            "distance": 0.6,
+            "name": "Five Keys Independence High School (Sf Sheriff's)",
+            "rating": 2,
+            "level": "High",
+            "studentsPerTeacher": 25,
+            "assigned": null,
+            "grades": "9-12",
+            "link": "https://www.greatschools.org/school?id=24794&state=CA",
+            "type": "Charter",
+            "size": 3417,
+            "totalCount": 1,
+            "isAssigned": true,
+            "__typename": "School"
+          }
+        ],
+        "schoolSearchUrl": {
+          "path": "/san-francisco-ca/schools/",
+          "__typename": "UrlObjectType"
+        },
+        "citySearchUrl": {
+          "text": "Homes in San Francisco",
+          "__typename": "UrlObjectType"
+        },
+        "nearbyAmenities": [],
+        "thumb": [
+          {
+            "url": "https://photos.zillowstatic.com/fp/b50170aa78c04b4f290a6b82d675ceaf-p_c.jpg",
+            "__typename": "Photo"
+          },
+          {
+            "url": "https://photos.zillowstatic.com/fp/7c32069573215ca46ff7b90a7e1e1387-p_c.jpg",
+            "__typename": "Photo"
+          },
+          {
+            "url": "https://photos.zillowstatic.com/fp/dbbf1fab8766201521c3524af2880c23-p_c.jpg",
+            "__typename": "Photo"
+          },
+          {
+            "url": "https://photos.zillowstatic.com/fp/18936b98130bd6c7123d1e3298793522-p_c.jpg",
+            "__typename": "Photo"
+          },
+          {
+            "url": "https://photos.zillowstatic.com/fp/24bae9a6b48f95a4fbca54ae0d63eae6-p_c.jpg",
+            "__typename": "Photo"
+          },
+          {
+            "url": "https://photos.zillowstatic.com/fp/9044432da55ac82a00168f8b41a3c40c-p_c.jpg",
+            "__typename": "Photo"
+          },
+          {
+            "url": "https://photos.zillowstatic.com/fp/87e43a27d028d56a418994c4d02e103c-p_c.jpg",
+            "__typename": "Photo"
+          },
+          {
+            "url": "https://photos.zillowstatic.com/fp/e4cee4a8df408d0164b93ea547e5242b-p_c.jpg",
+            "__typename": "Photo"
+          },
+          {
+            "url": "https://photos.zillowstatic.com/fp/a7e9d1892b99bfe98a887f522f92488c-p_c.jpg",
+            "__typename": "Photo"
+          },
+          {
+            "url": "https://photos.zillowstatic.com/fp/6beabe3b3d09f26abf417201918d0f96-p_c.jpg",
+            "__typename": "Photo"
+          },
+          {
+            "url": "https://photos.zillowstatic.com/fp/a7c490ac23d9f1dfee2abefa4773e99d-p_c.jpg",
+            "__typename": "Photo"
+          },
+          {
+            "url": "https://photos.zillowstatic.com/fp/a03c617315e8ad6a1d0f93636aff0580-p_c.jpg",
+            "__typename": "Photo"
+          },
+          {
+            "url": "https://photos.zillowstatic.com/fp/31010684bed651318ced47f6fc8286c5-p_c.jpg",
+            "__typename": "Photo"
+          },
+          {
+            "url": "https://photos.zillowstatic.com/fp/500e075f6dd2b3675060ab8d8299e04d-p_c.jpg",
+            "__typename": "Photo"
+          },
+          {
+            "url": "https://photos.zillowstatic.com/fp/ed2d47eb91fb9c8e1290db4899002944-p_c.jpg",
+            "__typename": "Photo"
+          },
+          {
+            "url": "https://photos.zillowstatic.com/fp/45c73156f9e8276e8d29b0f625ce703b-p_c.jpg",
+            "__typename": "Photo"
+          },
+          {
+            "url": "https://photos.zillowstatic.com/fp/b7aa85b945ea840ce995d93b6c0d312b-p_c.jpg",
+            "__typename": "Photo"
+          },
+          {
+            "url": "https://photos.zillowstatic.com/fp/a19e19f13a631dfa45621379747486f1-p_c.jpg",
+            "__typename": "Photo"
+          },
+          {
+            "url": "https://photos.zillowstatic.com/fp/edfc44a3522791cd0a2a66e4b0596d5b-p_c.jpg",
+            "__typename": "Photo"
+          },
+          {
+            "url": "https://photos.zillowstatic.com/fp/536636fc28e2a0a45097bd100f7c03d1-p_c.jpg",
+            "__typename": "Photo"
+          },
+          {
+            "url": "https://photos.zillowstatic.com/fp/cfe1ba61b63a64017ce6fd6756190124-p_c.jpg",
+            "__typename": "Photo"
+          },
+          {
+            "url": "https://photos.zillowstatic.com/fp/fb83e16b63d0d777fbe61c3ec606a970-p_c.jpg",
+            "__typename": "Photo"
+          },
+          {
+            "url": "https://photos.zillowstatic.com/fp/52831e08c3a9b14b21a2ffb6d294ff37-p_c.jpg",
+            "__typename": "Photo"
+          },
+          {
+            "url": "https://photos.zillowstatic.com/fp/989e8b9f69042bbad565c31c4e949c49-p_c.jpg",
+            "__typename": "Photo"
+          },
+          {
+            "url": "https://photos.zillowstatic.com/fp/ecb8822e2945fa9aceda1524fbc6c380-p_c.jpg",
+            "__typename": "Photo"
+          },
+          {
+            "url": "https://photos.zillowstatic.com/fp/178b971b5b6dfade01fe0a6e4376ce30-p_c.jpg",
+            "__typename": "Photo"
+          },
+          {
+            "url": "https://photos.zillowstatic.com/fp/d747991634a22a8bedbe4c6e8e29c497-p_c.jpg",
+            "__typename": "Photo"
+          },
+          {
+            "url": "https://photos.zillowstatic.com/fp/7502320aa03d4f92732944e5b545f8e3-p_c.jpg",
+            "__typename": "Photo"
+          },
+          {
+            "url": "https://photos.zillowstatic.com/fp/4b604e692e1e1f8a1410705ceb91ec58-p_c.jpg",
+            "__typename": "Photo"
+          },
+          {
+            "url": "https://photos.zillowstatic.com/fp/69b07006a57b72d18406567d86dcd08c-p_c.jpg",
+            "__typename": "Photo"
+          },
+          {
+            "url": "https://photos.zillowstatic.com/fp/27d2a59ea52fc9bafd88bfd93f053860-p_c.jpg",
+            "__typename": "Photo"
+          },
+          {
+            "url": "https://photos.zillowstatic.com/fp/433493e63299ee58e9694b7e7bf54bad-p_c.jpg",
+            "__typename": "Photo"
+          },
+          {
+            "url": "https://photos.zillowstatic.com/fp/585a036d16d212ba6b7d489a1275618e-p_c.jpg",
+            "__typename": "Photo"
+          },
+          {
+            "url": "https://photos.zillowstatic.com/fp/6121f23d8e5fce8376fa9ac719a75325-p_c.jpg",
+            "__typename": "Photo"
+          }
+        ],
+        "walkScore": {
+          "walkscore": 92,
+          "description": "Walker's Paradise",
+          "ws_link": "https://www.walkscore.com/score/loc/lat=37.776943/lng=-122.392804/?utm_source=zillow2.com&utm_medium=ws_api&utm_campaign=ws_api",
+          "__typename": "WalkScoreResponse"
+        },
+        "transitScore": {
+          "transit_score": 76,
+          "description": "Excellent Transit",
+          "ws_link": "https://www.walkscore.com/score/loc/lat=37.7769/lng=-122.3928/?utm_source=zillow2.com&utm_medium=ts_api&utm_campaign=ts_api",
+          "__typename": "TransitScoreResponse"
+        },
+        "description": "Avalon at Mission Bay offers studio, 1, 2 and 3 bedroom apartments and town homes in San Francisco. Now offering furnished and unfurnished apartments. Apartments include gourmet kitchens with granite countertops, Energy Star appliances, washer/dryer, and more.\n\nAvalon at Mission Bay located in San Francisco near the San Francisco Caltrain Station offers thoughtfully designed studio, 1, 2 and 3 bedroom apartments and town homes. Now offering furnished and unfurnished apartments, these San Francisco apartments include gourmet kitchens with granite countertops, Energy Star appliances, washer/dryer, and more. Community includes two multilevel state of the art fitness centers, resident lounge areas, and courtyards with barbecue grills and bocce ball court. Avalon at Mission Bay is conveniently located in vibrant SoMa, just a block from the home of the San Francisco Giants. On site retail includes Bark Avenue Doggy Daycare along with nearby Safeway, Lucky Strike and more.",
+        "bestMatchedUnit": {
+          "hdpUrl": "/homedetails/255-King-St-PY200RM2R-San-Francisco-CA-94107/2077839462_zpid/",
+          "unitNumber": null,
+          "__typename": "UnitV2"
+        },
+        "carouselPhotos": [
+          {
+            "url": "https://photos.zillowstatic.com/fp/b50170aa78c04b4f290a6b82d675ceaf-p_h.jpg",
+            "caption": "Finish Package IV Kitchen with quartz countertops, tile backsplash, and stainless steel appliances (Phase I)",
+            "__typename": "Photo"
+          },
+          {
+            "url": "https://photos.zillowstatic.com/fp/7c32069573215ca46ff7b90a7e1e1387-p_h.jpg",
+            "caption": "Finish Package IV Kitchen with stainless steel appliances and hard surface flooring (Phase I)",
+            "__typename": "Photo"
+          },
+          {
+            "url": "https://photos.zillowstatic.com/fp/dbbf1fab8766201521c3524af2880c23-p_h.jpg",
+            "caption": "Bedroom",
+            "__typename": "Photo"
+          },
+          {
+            "url": "https://photos.zillowstatic.com/fp/18936b98130bd6c7123d1e3298793522-p_h.jpg",
+            "caption": "In-home washer/dryer",
+            "__typename": "Photo"
+          },
+          {
+            "url": "https://photos.zillowstatic.com/fp/24bae9a6b48f95a4fbca54ae0d63eae6-p_h.jpg",
+            "caption": "Finish Package IV Bath (Phase I)",
+            "__typename": "Photo"
+          },
+          {
+            "url": "https://photos.zillowstatic.com/fp/9044432da55ac82a00168f8b41a3c40c-p_h.jpg",
+            "caption": "Finish Package III Kitchen with granite countertops, espresso cabinetry, and hard surface flooring (Phase III)",
+            "__typename": "Photo"
+          },
+          {
+            "url": "https://photos.zillowstatic.com/fp/87e43a27d028d56a418994c4d02e103c-p_h.jpg",
+            "caption": "Finish Package III Kitchen, living and dining areas with hard surface flooring (Phase III)",
+            "__typename": "Photo"
+          },
+          {
+            "url": "https://photos.zillowstatic.com/fp/e4cee4a8df408d0164b93ea547e5242b-p_h.jpg",
+            "caption": "Bedroom",
+            "__typename": "Photo"
+          },
+          {
+            "url": "https://photos.zillowstatic.com/fp/a7e9d1892b99bfe98a887f522f92488c-p_h.jpg",
+            "caption": "Finish Package III Bath (Phase III)",
+            "__typename": "Photo"
+          },
+          {
+            "url": "https://photos.zillowstatic.com/fp/6beabe3b3d09f26abf417201918d0f96-p_h.jpg",
+            "caption": "Finish Package II Kitchen, living, and dining areas (Phase I)",
+            "__typename": "Photo"
+          },
+          {
+            "url": "https://photos.zillowstatic.com/fp/a7c490ac23d9f1dfee2abefa4773e99d-p_h.jpg",
+            "caption": "Finish Package II Living and dining areas (Phase I)",
+            "__typename": "Photo"
+          },
+          {
+            "url": "https://photos.zillowstatic.com/fp/a03c617315e8ad6a1d0f93636aff0580-p_h.jpg",
+            "caption": "Finish Package II Bath (Phase I)",
+            "__typename": "Photo"
+          },
+          {
+            "url": "https://photos.zillowstatic.com/fp/31010684bed651318ced47f6fc8286c5-p_h.jpg",
+            "caption": "Furnished apartments available",
+            "__typename": "Photo"
+          },
+          {
+            "url": "https://photos.zillowstatic.com/fp/500e075f6dd2b3675060ab8d8299e04d-p_h.jpg",
+            "caption": "Furnished apartments available",
+            "__typename": "Photo"
+          },
+          {
+            "url": "https://photos.zillowstatic.com/fp/ed2d47eb91fb9c8e1290db4899002944-p_h.jpg",
+            "caption": "Fitness center (Phase I)",
+            "__typename": "Photo"
+          },
+          {
+            "url": "https://photos.zillowstatic.com/fp/45c73156f9e8276e8d29b0f625ce703b-p_h.jpg",
+            "caption": "Fitness center (Phase I)",
+            "__typename": "Photo"
+          },
+          {
+            "url": "https://photos.zillowstatic.com/fp/b7aa85b945ea840ce995d93b6c0d312b-p_h.jpg",
+            "caption": "Fitness center (Phase I)",
+            "__typename": "Photo"
+          },
+          {
+            "url": "https://photos.zillowstatic.com/fp/a19e19f13a631dfa45621379747486f1-p_h.jpg",
+            "caption": "Studio with spin bikes (Phase I)",
+            "__typename": "Photo"
+          },
+          {
+            "url": "https://photos.zillowstatic.com/fp/edfc44a3522791cd0a2a66e4b0596d5b-p_h.jpg",
+            "caption": "Two-level Fitness center (Phase III)",
+            "__typename": "Photo"
+          },
+          {
+            "url": "https://photos.zillowstatic.com/fp/536636fc28e2a0a45097bd100f7c03d1-p_h.jpg",
+            "caption": "Lounge with game area (Phase I)",
+            "__typename": "Photo"
+          },
+          {
+            "url": "https://photos.zillowstatic.com/fp/cfe1ba61b63a64017ce6fd6756190124-p_h.jpg",
+            "caption": "Lounge with co-work spaces (Phase I)",
+            "__typename": "Photo"
+          },
+          {
+            "url": "https://photos.zillowstatic.com/fp/fb83e16b63d0d777fbe61c3ec606a970-p_h.jpg",
+            "caption": "Conference room (Phase I)",
+            "__typename": "Photo"
+          },
+          {
+            "url": "https://photos.zillowstatic.com/fp/52831e08c3a9b14b21a2ffb6d294ff37-p_h.jpg",
+            "caption": "Coming soon refinished basketball court (Phase II) Rendering",
+            "__typename": "Photo"
+          },
+          {
+            "url": "https://photos.zillowstatic.com/fp/989e8b9f69042bbad565c31c4e949c49-p_h.jpg",
+            "caption": "Coming soon updated game room with new seating (Phase II) Rendering",
+            "__typename": "Photo"
+          },
+          {
+            "url": "https://photos.zillowstatic.com/fp/ecb8822e2945fa9aceda1524fbc6c380-p_h.jpg",
+            "caption": "Coming soon updated lobby (Phase II) Rendering",
+            "__typename": "Photo"
+          },
+          {
+            "url": "https://photos.zillowstatic.com/fp/178b971b5b6dfade01fe0a6e4376ce30-p_h.jpg",
+            "caption": "Lobby (Phase I)",
+            "__typename": "Photo"
+          },
+          {
+            "url": "https://photos.zillowstatic.com/fp/d747991634a22a8bedbe4c6e8e29c497-p_h.jpg",
+            "caption": "Lobby (Phase I)",
+            "__typename": "Photo"
+          },
+          {
+            "url": "https://photos.zillowstatic.com/fp/7502320aa03d4f92732944e5b545f8e3-p_h.jpg",
+            "caption": "19th Floor Outdoor deck (Phase I)",
+            "__typename": "Photo"
+          },
+          {
+            "url": "https://photos.zillowstatic.com/fp/4b604e692e1e1f8a1410705ceb91ec58-p_h.jpg",
+            "caption": "Courtyard with grilling stations and lounge seating (Phase I)",
+            "__typename": "Photo"
+          },
+          {
+            "url": "https://photos.zillowstatic.com/fp/69b07006a57b72d18406567d86dcd08c-p_h.jpg",
+            "caption": "Courtyard with firepit (Phase II)",
+            "__typename": "Photo"
+          },
+          {
+            "url": "https://photos.zillowstatic.com/fp/27d2a59ea52fc9bafd88bfd93f053860-p_h.jpg",
+            "caption": "Outdoor deck with grilling stations (Phase II)",
+            "__typename": "Photo"
+          },
+          {
+            "url": "https://photos.zillowstatic.com/fp/433493e63299ee58e9694b7e7bf54bad-p_h.jpg",
+            "caption": "Building exterior",
+            "__typename": "Photo"
+          },
+          {
+            "url": "https://photos.zillowstatic.com/fp/585a036d16d212ba6b7d489a1275618e-p_h.jpg",
+            "caption": "Building exterior",
+            "__typename": "Photo"
+          },
+          {
+            "url": "https://photos.zillowstatic.com/fp/6121f23d8e5fce8376fa9ac719a75325-p_h.jpg",
+            "caption": "Views",
+            "__typename": "Photo"
+          }
+        ],
+        "photos": [
+          {
+            "caption": "Finish Package IV Kitchen with quartz countertops, tile backsplash, and stainless steel appliances (Phase I)",
+            "sources": [
+              {
+                "url": "https://photos.zillowstatic.com/fp/b50170aa78c04b4f290a6b82d675ceaf-cc_ft_384.jpg",
+                "width": 384,
+                "__typename": "ResponsiveImageSource"
+              },
+              {
+                "url": "https://photos.zillowstatic.com/fp/b50170aa78c04b4f290a6b82d675ceaf-cc_ft_576.jpg",
+                "width": 576,
+                "__typename": "ResponsiveImageSource"
+              },
+              {
+                "url": "https://photos.zillowstatic.com/fp/b50170aa78c04b4f290a6b82d675ceaf-cc_ft_768.jpg",
+                "width": 768,
+                "__typename": "ResponsiveImageSource"
+              }
+            ],
+            "__typename": "Photo"
+          },
+          {
+            "caption": "Finish Package IV Kitchen with stainless steel appliances and hard surface flooring (Phase I)",
+            "sources": [
+              {
+                "url": "https://photos.zillowstatic.com/fp/7c32069573215ca46ff7b90a7e1e1387-cc_ft_384.jpg",
+                "width": 384,
+                "__typename": "ResponsiveImageSource"
+              },
+              {
+                "url": "https://photos.zillowstatic.com/fp/7c32069573215ca46ff7b90a7e1e1387-cc_ft_576.jpg",
+                "width": 576,
+                "__typename": "ResponsiveImageSource"
+              },
+              {
+                "url": "https://photos.zillowstatic.com/fp/7c32069573215ca46ff7b90a7e1e1387-cc_ft_768.jpg",
+                "width": 768,
+                "__typename": "ResponsiveImageSource"
+              }
+            ],
+            "__typename": "Photo"
+          },
+          {
+            "caption": "Bedroom",
+            "sources": [
+              {
+                "url": "https://photos.zillowstatic.com/fp/dbbf1fab8766201521c3524af2880c23-cc_ft_384.jpg",
+                "width": 384,
+                "__typename": "ResponsiveImageSource"
+              },
+              {
+                "url": "https://photos.zillowstatic.com/fp/dbbf1fab8766201521c3524af2880c23-cc_ft_576.jpg",
+                "width": 576,
+                "__typename": "ResponsiveImageSource"
+              },
+              {
+                "url": "https://photos.zillowstatic.com/fp/dbbf1fab8766201521c3524af2880c23-cc_ft_768.jpg",
+                "width": 768,
+                "__typename": "ResponsiveImageSource"
+              }
+            ],
+            "__typename": "Photo"
+          },
+          {
+            "caption": "In-home washer/dryer",
+            "sources": [
+              {
+                "url": "https://photos.zillowstatic.com/fp/18936b98130bd6c7123d1e3298793522-cc_ft_384.jpg",
+                "width": 384,
+                "__typename": "ResponsiveImageSource"
+              },
+              {
+                "url": "https://photos.zillowstatic.com/fp/18936b98130bd6c7123d1e3298793522-cc_ft_576.jpg",
+                "width": 576,
+                "__typename": "ResponsiveImageSource"
+              },
+              {
+                "url": "https://photos.zillowstatic.com/fp/18936b98130bd6c7123d1e3298793522-cc_ft_768.jpg",
+                "width": 768,
+                "__typename": "ResponsiveImageSource"
+              }
+            ],
+            "__typename": "Photo"
+          },
+          {
+            "caption": "Finish Package IV Bath (Phase I)",
+            "sources": [
+              {
+                "url": "https://photos.zillowstatic.com/fp/24bae9a6b48f95a4fbca54ae0d63eae6-cc_ft_384.jpg",
+                "width": 384,
+                "__typename": "ResponsiveImageSource"
+              },
+              {
+                "url": "https://photos.zillowstatic.com/fp/24bae9a6b48f95a4fbca54ae0d63eae6-cc_ft_576.jpg",
+                "width": 576,
+                "__typename": "ResponsiveImageSource"
+              },
+              {
+                "url": "https://photos.zillowstatic.com/fp/24bae9a6b48f95a4fbca54ae0d63eae6-cc_ft_768.jpg",
+                "width": 768,
+                "__typename": "ResponsiveImageSource"
+              }
+            ],
+            "__typename": "Photo"
+          },
+          {
+            "caption": "Finish Package III Kitchen with granite countertops, espresso cabinetry, and hard surface flooring (Phase III)",
+            "sources": [
+              {
+                "url": "https://photos.zillowstatic.com/fp/9044432da55ac82a00168f8b41a3c40c-cc_ft_384.jpg",
+                "width": 384,
+                "__typename": "ResponsiveImageSource"
+              },
+              {
+                "url": "https://photos.zillowstatic.com/fp/9044432da55ac82a00168f8b41a3c40c-cc_ft_576.jpg",
+                "width": 576,
+                "__typename": "ResponsiveImageSource"
+              },
+              {
+                "url": "https://photos.zillowstatic.com/fp/9044432da55ac82a00168f8b41a3c40c-cc_ft_768.jpg",
+                "width": 768,
+                "__typename": "ResponsiveImageSource"
+              }
+            ],
+            "__typename": "Photo"
+          },
+          {
+            "caption": "Finish Package III Kitchen, living and dining areas with hard surface flooring (Phase III)",
+            "sources": [
+              {
+                "url": "https://photos.zillowstatic.com/fp/87e43a27d028d56a418994c4d02e103c-cc_ft_384.jpg",
+                "width": 384,
+                "__typename": "ResponsiveImageSource"
+              },
+              {
+                "url": "https://photos.zillowstatic.com/fp/87e43a27d028d56a418994c4d02e103c-cc_ft_576.jpg",
+                "width": 576,
+                "__typename": "ResponsiveImageSource"
+              },
+              {
+                "url": "https://photos.zillowstatic.com/fp/87e43a27d028d56a418994c4d02e103c-cc_ft_768.jpg",
+                "width": 768,
+                "__typename": "ResponsiveImageSource"
+              }
+            ],
+            "__typename": "Photo"
+          },
+          {
+            "caption": "Bedroom",
+            "sources": [
+              {
+                "url": "https://photos.zillowstatic.com/fp/e4cee4a8df408d0164b93ea547e5242b-cc_ft_384.jpg",
+                "width": 384,
+                "__typename": "ResponsiveImageSource"
+              },
+              {
+                "url": "https://photos.zillowstatic.com/fp/e4cee4a8df408d0164b93ea547e5242b-cc_ft_576.jpg",
+                "width": 576,
+                "__typename": "ResponsiveImageSource"
+              },
+              {
+                "url": "https://photos.zillowstatic.com/fp/e4cee4a8df408d0164b93ea547e5242b-cc_ft_768.jpg",
+                "width": 768,
+                "__typename": "ResponsiveImageSource"
+              }
+            ],
+            "__typename": "Photo"
+          },
+          {
+            "caption": "Finish Package III Bath (Phase III)",
+            "sources": [
+              {
+                "url": "https://photos.zillowstatic.com/fp/a7e9d1892b99bfe98a887f522f92488c-cc_ft_384.jpg",
+                "width": 384,
+                "__typename": "ResponsiveImageSource"
+              },
+              {
+                "url": "https://photos.zillowstatic.com/fp/a7e9d1892b99bfe98a887f522f92488c-cc_ft_576.jpg",
+                "width": 576,
+                "__typename": "ResponsiveImageSource"
+              },
+              {
+                "url": "https://photos.zillowstatic.com/fp/a7e9d1892b99bfe98a887f522f92488c-cc_ft_768.jpg",
+                "width": 768,
+                "__typename": "ResponsiveImageSource"
+              }
+            ],
+            "__typename": "Photo"
+          },
+          {
+            "caption": "Finish Package II Kitchen, living, and dining areas (Phase I)",
+            "sources": [
+              {
+                "url": "https://photos.zillowstatic.com/fp/6beabe3b3d09f26abf417201918d0f96-cc_ft_384.jpg",
+                "width": 384,
+                "__typename": "ResponsiveImageSource"
+              },
+              {
+                "url": "https://photos.zillowstatic.com/fp/6beabe3b3d09f26abf417201918d0f96-cc_ft_576.jpg",
+                "width": 576,
+                "__typename": "ResponsiveImageSource"
+              },
+              {
+                "url": "https://photos.zillowstatic.com/fp/6beabe3b3d09f26abf417201918d0f96-cc_ft_768.jpg",
+                "width": 768,
+                "__typename": "ResponsiveImageSource"
+              }
+            ],
+            "__typename": "Photo"
+          },
+          {
+            "caption": "Finish Package II Living and dining areas (Phase I)",
+            "sources": [
+              {
+                "url": "https://photos.zillowstatic.com/fp/a7c490ac23d9f1dfee2abefa4773e99d-cc_ft_384.jpg",
+                "width": 384,
+                "__typename": "ResponsiveImageSource"
+              },
+              {
+                "url": "https://photos.zillowstatic.com/fp/a7c490ac23d9f1dfee2abefa4773e99d-cc_ft_576.jpg",
+                "width": 576,
+                "__typename": "ResponsiveImageSource"
+              },
+              {
+                "url": "https://photos.zillowstatic.com/fp/a7c490ac23d9f1dfee2abefa4773e99d-cc_ft_768.jpg",
+                "width": 768,
+                "__typename": "ResponsiveImageSource"
+              }
+            ],
+            "__typename": "Photo"
+          },
+          {
+            "caption": "Finish Package II Bath (Phase I)",
+            "sources": [
+              {
+                "url": "https://photos.zillowstatic.com/fp/a03c617315e8ad6a1d0f93636aff0580-cc_ft_384.jpg",
+                "width": 384,
+                "__typename": "ResponsiveImageSource"
+              },
+              {
+                "url": "https://photos.zillowstatic.com/fp/a03c617315e8ad6a1d0f93636aff0580-cc_ft_576.jpg",
+                "width": 576,
+                "__typename": "ResponsiveImageSource"
+              },
+              {
+                "url": "https://photos.zillowstatic.com/fp/a03c617315e8ad6a1d0f93636aff0580-cc_ft_768.jpg",
+                "width": 768,
+                "__typename": "ResponsiveImageSource"
+              }
+            ],
+            "__typename": "Photo"
+          },
+          {
+            "caption": "Furnished apartments available",
+            "sources": [
+              {
+                "url": "https://photos.zillowstatic.com/fp/31010684bed651318ced47f6fc8286c5-cc_ft_384.jpg",
+                "width": 384,
+                "__typename": "ResponsiveImageSource"
+              },
+              {
+                "url": "https://photos.zillowstatic.com/fp/31010684bed651318ced47f6fc8286c5-cc_ft_576.jpg",
+                "width": 576,
+                "__typename": "ResponsiveImageSource"
+              },
+              {
+                "url": "https://photos.zillowstatic.com/fp/31010684bed651318ced47f6fc8286c5-cc_ft_768.jpg",
+                "width": 768,
+                "__typename": "ResponsiveImageSource"
+              }
+            ],
+            "__typename": "Photo"
+          },
+          {
+            "caption": "Furnished apartments available",
+            "sources": [
+              {
+                "url": "https://photos.zillowstatic.com/fp/500e075f6dd2b3675060ab8d8299e04d-cc_ft_384.jpg",
+                "width": 384,
+                "__typename": "ResponsiveImageSource"
+              },
+              {
+                "url": "https://photos.zillowstatic.com/fp/500e075f6dd2b3675060ab8d8299e04d-cc_ft_576.jpg",
+                "width": 576,
+                "__typename": "ResponsiveImageSource"
+              },
+              {
+                "url": "https://photos.zillowstatic.com/fp/500e075f6dd2b3675060ab8d8299e04d-cc_ft_768.jpg",
+                "width": 768,
+                "__typename": "ResponsiveImageSource"
+              }
+            ],
+            "__typename": "Photo"
+          },
+          {
+            "caption": "Fitness center (Phase I)",
+            "sources": [
+              {
+                "url": "https://photos.zillowstatic.com/fp/ed2d47eb91fb9c8e1290db4899002944-cc_ft_384.jpg",
+                "width": 384,
+                "__typename": "ResponsiveImageSource"
+              },
+              {
+                "url": "https://photos.zillowstatic.com/fp/ed2d47eb91fb9c8e1290db4899002944-cc_ft_576.jpg",
+                "width": 576,
+                "__typename": "ResponsiveImageSource"
+              },
+              {
+                "url": "https://photos.zillowstatic.com/fp/ed2d47eb91fb9c8e1290db4899002944-cc_ft_768.jpg",
+                "width": 768,
+                "__typename": "ResponsiveImageSource"
+              }
+            ],
+            "__typename": "Photo"
+          },
+          {
+            "caption": "Fitness center (Phase I)",
+            "sources": [
+              {
+                "url": "https://photos.zillowstatic.com/fp/45c73156f9e8276e8d29b0f625ce703b-cc_ft_384.jpg",
+                "width": 384,
+                "__typename": "ResponsiveImageSource"
+              },
+              {
+                "url": "https://photos.zillowstatic.com/fp/45c73156f9e8276e8d29b0f625ce703b-cc_ft_576.jpg",
+                "width": 576,
+                "__typename": "ResponsiveImageSource"
+              },
+              {
+                "url": "https://photos.zillowstatic.com/fp/45c73156f9e8276e8d29b0f625ce703b-cc_ft_768.jpg",
+                "width": 768,
+                "__typename": "ResponsiveImageSource"
+              }
+            ],
+            "__typename": "Photo"
+          },
+          {
+            "caption": "Fitness center (Phase I)",
+            "sources": [
+              {
+                "url": "https://photos.zillowstatic.com/fp/b7aa85b945ea840ce995d93b6c0d312b-cc_ft_384.jpg",
+                "width": 384,
+                "__typename": "ResponsiveImageSource"
+              },
+              {
+                "url": "https://photos.zillowstatic.com/fp/b7aa85b945ea840ce995d93b6c0d312b-cc_ft_576.jpg",
+                "width": 576,
+                "__typename": "ResponsiveImageSource"
+              },
+              {
+                "url": "https://photos.zillowstatic.com/fp/b7aa85b945ea840ce995d93b6c0d312b-cc_ft_768.jpg",
+                "width": 768,
+                "__typename": "ResponsiveImageSource"
+              }
+            ],
+            "__typename": "Photo"
+          },
+          {
+            "caption": "Studio with spin bikes (Phase I)",
+            "sources": [
+              {
+                "url": "https://photos.zillowstatic.com/fp/a19e19f13a631dfa45621379747486f1-cc_ft_384.jpg",
+                "width": 384,
+                "__typename": "ResponsiveImageSource"
+              },
+              {
+                "url": "https://photos.zillowstatic.com/fp/a19e19f13a631dfa45621379747486f1-cc_ft_576.jpg",
+                "width": 576,
+                "__typename": "ResponsiveImageSource"
+              },
+              {
+                "url": "https://photos.zillowstatic.com/fp/a19e19f13a631dfa45621379747486f1-cc_ft_768.jpg",
+                "width": 768,
+                "__typename": "ResponsiveImageSource"
+              }
+            ],
+            "__typename": "Photo"
+          },
+          {
+            "caption": "Two-level Fitness center (Phase III)",
+            "sources": [
+              {
+                "url": "https://photos.zillowstatic.com/fp/edfc44a3522791cd0a2a66e4b0596d5b-cc_ft_384.jpg",
+                "width": 384,
+                "__typename": "ResponsiveImageSource"
+              },
+              {
+                "url": "https://photos.zillowstatic.com/fp/edfc44a3522791cd0a2a66e4b0596d5b-cc_ft_576.jpg",
+                "width": 576,
+                "__typename": "ResponsiveImageSource"
+              },
+              {
+                "url": "https://photos.zillowstatic.com/fp/edfc44a3522791cd0a2a66e4b0596d5b-cc_ft_768.jpg",
+                "width": 768,
+                "__typename": "ResponsiveImageSource"
+              }
+            ],
+            "__typename": "Photo"
+          },
+          {
+            "caption": "Lounge with game area (Phase I)",
+            "sources": [
+              {
+                "url": "https://photos.zillowstatic.com/fp/536636fc28e2a0a45097bd100f7c03d1-cc_ft_384.jpg",
+                "width": 384,
+                "__typename": "ResponsiveImageSource"
+              },
+              {
+                "url": "https://photos.zillowstatic.com/fp/536636fc28e2a0a45097bd100f7c03d1-cc_ft_576.jpg",
+                "width": 576,
+                "__typename": "ResponsiveImageSource"
+              },
+              {
+                "url": "https://photos.zillowstatic.com/fp/536636fc28e2a0a45097bd100f7c03d1-cc_ft_768.jpg",
+                "width": 768,
+                "__typename": "ResponsiveImageSource"
+              }
+            ],
+            "__typename": "Photo"
+          },
+          {
+            "caption": "Lounge with co-work spaces (Phase I)",
+            "sources": [
+              {
+                "url": "https://photos.zillowstatic.com/fp/cfe1ba61b63a64017ce6fd6756190124-cc_ft_384.jpg",
+                "width": 384,
+                "__typename": "ResponsiveImageSource"
+              },
+              {
+                "url": "https://photos.zillowstatic.com/fp/cfe1ba61b63a64017ce6fd6756190124-cc_ft_576.jpg",
+                "width": 576,
+                "__typename": "ResponsiveImageSource"
+              },
+              {
+                "url": "https://photos.zillowstatic.com/fp/cfe1ba61b63a64017ce6fd6756190124-cc_ft_768.jpg",
+                "width": 768,
+                "__typename": "ResponsiveImageSource"
+              }
+            ],
+            "__typename": "Photo"
+          },
+          {
+            "caption": "Conference room (Phase I)",
+            "sources": [
+              {
+                "url": "https://photos.zillowstatic.com/fp/fb83e16b63d0d777fbe61c3ec606a970-cc_ft_384.jpg",
+                "width": 384,
+                "__typename": "ResponsiveImageSource"
+              },
+              {
+                "url": "https://photos.zillowstatic.com/fp/fb83e16b63d0d777fbe61c3ec606a970-cc_ft_576.jpg",
+                "width": 576,
+                "__typename": "ResponsiveImageSource"
+              },
+              {
+                "url": "https://photos.zillowstatic.com/fp/fb83e16b63d0d777fbe61c3ec606a970-cc_ft_768.jpg",
+                "width": 768,
+                "__typename": "ResponsiveImageSource"
+              }
+            ],
+            "__typename": "Photo"
+          },
+          {
+            "caption": "Coming soon refinished basketball court (Phase II) Rendering",
+            "sources": [
+              {
+                "url": "https://photos.zillowstatic.com/fp/52831e08c3a9b14b21a2ffb6d294ff37-cc_ft_384.jpg",
+                "width": 384,
+                "__typename": "ResponsiveImageSource"
+              },
+              {
+                "url": "https://photos.zillowstatic.com/fp/52831e08c3a9b14b21a2ffb6d294ff37-cc_ft_576.jpg",
+                "width": 576,
+                "__typename": "ResponsiveImageSource"
+              },
+              {
+                "url": "https://photos.zillowstatic.com/fp/52831e08c3a9b14b21a2ffb6d294ff37-cc_ft_768.jpg",
+                "width": 768,
+                "__typename": "ResponsiveImageSource"
+              }
+            ],
+            "__typename": "Photo"
+          },
+          {
+            "caption": "Coming soon updated game room with new seating (Phase II) Rendering",
+            "sources": [
+              {
+                "url": "https://photos.zillowstatic.com/fp/989e8b9f69042bbad565c31c4e949c49-cc_ft_384.jpg",
+                "width": 384,
+                "__typename": "ResponsiveImageSource"
+              },
+              {
+                "url": "https://photos.zillowstatic.com/fp/989e8b9f69042bbad565c31c4e949c49-cc_ft_576.jpg",
+                "width": 576,
+                "__typename": "ResponsiveImageSource"
+              },
+              {
+                "url": "https://photos.zillowstatic.com/fp/989e8b9f69042bbad565c31c4e949c49-cc_ft_768.jpg",
+                "width": 768,
+                "__typename": "ResponsiveImageSource"
+              }
+            ],
+            "__typename": "Photo"
+          },
+          {
+            "caption": "Coming soon updated lobby (Phase II) Rendering",
+            "sources": [
+              {
+                "url": "https://photos.zillowstatic.com/fp/ecb8822e2945fa9aceda1524fbc6c380-cc_ft_384.jpg",
+                "width": 384,
+                "__typename": "ResponsiveImageSource"
+              },
+              {
+                "url": "https://photos.zillowstatic.com/fp/ecb8822e2945fa9aceda1524fbc6c380-cc_ft_576.jpg",
+                "width": 576,
+                "__typename": "ResponsiveImageSource"
+              },
+              {
+                "url": "https://photos.zillowstatic.com/fp/ecb8822e2945fa9aceda1524fbc6c380-cc_ft_768.jpg",
+                "width": 768,
+                "__typename": "ResponsiveImageSource"
+              }
+            ],
+            "__typename": "Photo"
+          },
+          {
+            "caption": "Lobby (Phase I)",
+            "sources": [
+              {
+                "url": "https://photos.zillowstatic.com/fp/178b971b5b6dfade01fe0a6e4376ce30-cc_ft_384.jpg",
+                "width": 384,
+                "__typename": "ResponsiveImageSource"
+              },
+              {
+                "url": "https://photos.zillowstatic.com/fp/178b971b5b6dfade01fe0a6e4376ce30-cc_ft_576.jpg",
+                "width": 576,
+                "__typename": "ResponsiveImageSource"
+              },
+              {
+                "url": "https://photos.zillowstatic.com/fp/178b971b5b6dfade01fe0a6e4376ce30-cc_ft_768.jpg",
+                "width": 768,
+                "__typename": "ResponsiveImageSource"
+              }
+            ],
+            "__typename": "Photo"
+          },
+          {
+            "caption": "Lobby (Phase I)",
+            "sources": [
+              {
+                "url": "https://photos.zillowstatic.com/fp/d747991634a22a8bedbe4c6e8e29c497-cc_ft_384.jpg",
+                "width": 384,
+                "__typename": "ResponsiveImageSource"
+              },
+              {
+                "url": "https://photos.zillowstatic.com/fp/d747991634a22a8bedbe4c6e8e29c497-cc_ft_576.jpg",
+                "width": 576,
+                "__typename": "ResponsiveImageSource"
+              },
+              {
+                "url": "https://photos.zillowstatic.com/fp/d747991634a22a8bedbe4c6e8e29c497-cc_ft_768.jpg",
+                "width": 768,
+                "__typename": "ResponsiveImageSource"
+              }
+            ],
+            "__typename": "Photo"
+          },
+          {
+            "caption": "19th Floor Outdoor deck (Phase I)",
+            "sources": [
+              {
+                "url": "https://photos.zillowstatic.com/fp/7502320aa03d4f92732944e5b545f8e3-cc_ft_384.jpg",
+                "width": 384,
+                "__typename": "ResponsiveImageSource"
+              },
+              {
+                "url": "https://photos.zillowstatic.com/fp/7502320aa03d4f92732944e5b545f8e3-cc_ft_576.jpg",
+                "width": 576,
+                "__typename": "ResponsiveImageSource"
+              },
+              {
+                "url": "https://photos.zillowstatic.com/fp/7502320aa03d4f92732944e5b545f8e3-cc_ft_768.jpg",
+                "width": 768,
+                "__typename": "ResponsiveImageSource"
+              }
+            ],
+            "__typename": "Photo"
+          },
+          {
+            "caption": "Courtyard with grilling stations and lounge seating (Phase I)",
+            "sources": [
+              {
+                "url": "https://photos.zillowstatic.com/fp/4b604e692e1e1f8a1410705ceb91ec58-cc_ft_384.jpg",
+                "width": 384,
+                "__typename": "ResponsiveImageSource"
+              },
+              {
+                "url": "https://photos.zillowstatic.com/fp/4b604e692e1e1f8a1410705ceb91ec58-cc_ft_576.jpg",
+                "width": 576,
+                "__typename": "ResponsiveImageSource"
+              },
+              {
+                "url": "https://photos.zillowstatic.com/fp/4b604e692e1e1f8a1410705ceb91ec58-cc_ft_768.jpg",
+                "width": 768,
+                "__typename": "ResponsiveImageSource"
+              }
+            ],
+            "__typename": "Photo"
+          },
+          {
+            "caption": "Courtyard with firepit (Phase II)",
+            "sources": [
+              {
+                "url": "https://photos.zillowstatic.com/fp/69b07006a57b72d18406567d86dcd08c-cc_ft_384.jpg",
+                "width": 384,
+                "__typename": "ResponsiveImageSource"
+              },
+              {
+                "url": "https://photos.zillowstatic.com/fp/69b07006a57b72d18406567d86dcd08c-cc_ft_576.jpg",
+                "width": 576,
+                "__typename": "ResponsiveImageSource"
+              },
+              {
+                "url": "https://photos.zillowstatic.com/fp/69b07006a57b72d18406567d86dcd08c-cc_ft_768.jpg",
+                "width": 768,
+                "__typename": "ResponsiveImageSource"
+              }
+            ],
+            "__typename": "Photo"
+          },
+          {
+            "caption": "Outdoor deck with grilling stations (Phase II)",
+            "sources": [
+              {
+                "url": "https://photos.zillowstatic.com/fp/27d2a59ea52fc9bafd88bfd93f053860-cc_ft_384.jpg",
+                "width": 384,
+                "__typename": "ResponsiveImageSource"
+              },
+              {
+                "url": "https://photos.zillowstatic.com/fp/27d2a59ea52fc9bafd88bfd93f053860-cc_ft_576.jpg",
+                "width": 576,
+                "__typename": "ResponsiveImageSource"
+              },
+              {
+                "url": "https://photos.zillowstatic.com/fp/27d2a59ea52fc9bafd88bfd93f053860-cc_ft_768.jpg",
+                "width": 768,
+                "__typename": "ResponsiveImageSource"
+              }
+            ],
+            "__typename": "Photo"
+          },
+          {
+            "caption": "Building exterior",
+            "sources": [
+              {
+                "url": "https://photos.zillowstatic.com/fp/433493e63299ee58e9694b7e7bf54bad-cc_ft_384.jpg",
+                "width": 384,
+                "__typename": "ResponsiveImageSource"
+              },
+              {
+                "url": "https://photos.zillowstatic.com/fp/433493e63299ee58e9694b7e7bf54bad-cc_ft_576.jpg",
+                "width": 576,
+                "__typename": "ResponsiveImageSource"
+              },
+              {
+                "url": "https://photos.zillowstatic.com/fp/433493e63299ee58e9694b7e7bf54bad-cc_ft_768.jpg",
+                "width": 768,
+                "__typename": "ResponsiveImageSource"
+              }
+            ],
+            "__typename": "Photo"
+          },
+          {
+            "caption": "Building exterior",
+            "sources": [
+              {
+                "url": "https://photos.zillowstatic.com/fp/585a036d16d212ba6b7d489a1275618e-cc_ft_384.jpg",
+                "width": 384,
+                "__typename": "ResponsiveImageSource"
+              },
+              {
+                "url": "https://photos.zillowstatic.com/fp/585a036d16d212ba6b7d489a1275618e-cc_ft_576.jpg",
+                "width": 576,
+                "__typename": "ResponsiveImageSource"
+              },
+              {
+                "url": "https://photos.zillowstatic.com/fp/585a036d16d212ba6b7d489a1275618e-cc_ft_768.jpg",
+                "width": 768,
+                "__typename": "ResponsiveImageSource"
+              }
+            ],
+            "__typename": "Photo"
+          },
+          {
+            "caption": "Views",
+            "sources": [
+              {
+                "url": "https://photos.zillowstatic.com/fp/6121f23d8e5fce8376fa9ac719a75325-cc_ft_384.jpg",
+                "width": 384,
+                "__typename": "ResponsiveImageSource"
+              },
+              {
+                "url": "https://photos.zillowstatic.com/fp/6121f23d8e5fce8376fa9ac719a75325-cc_ft_576.jpg",
+                "width": 576,
+                "__typename": "ResponsiveImageSource"
+              },
+              {
+                "url": "https://photos.zillowstatic.com/fp/6121f23d8e5fce8376fa9ac719a75325-cc_ft_768.jpg",
+                "width": 768,
+                "__typename": "ResponsiveImageSource"
+              }
+            ],
+            "__typename": "Photo"
+          }
+        ],
+        "staticMap": "https://maps.googleapis.com/maps/api/staticmap?center=37.776943,-122.392804&zoom=17&size=768x576&maptype=roadmap&key=AIzaSyBdka2nwqeknSXr-TkzLcVMbaJEx4CkZEM&scale=1&signature=4ObnIXgmJ4H5j0RL0hinQG0clfg=",
+        "staticMapSatellite": "https://maps.googleapis.com/maps/api/staticmap?center=37.776943,-122.392804&zoom=17&size=768x576&maptype=satellite&key=AIzaSyBdka2nwqeknSXr-TkzLcVMbaJEx4CkZEM&scale=1&signature=tnKEw8-nW_xSjWgQ88pkECiMXHM=",
+        "streetViewLatLong": "https://maps.googleapis.com/maps/api/streetview?location=37.776943,-122.392804&size=768x576&key=AIzaSyBdka2nwqeknSXr-TkzLcVMbaJEx4CkZEM&source=outdoor&signature=EZEfLFFmfBFYiG4mFHRvOoNqMYs=",
+        "streetViewAddress": "https://maps.googleapis.com/maps/api/streetview?location=255%20King%20St%2C%20San%20Francisco%2C%20CA%2094107&size=768x576&key=AIzaSyBdka2nwqeknSXr-TkzLcVMbaJEx4CkZEM&source=outdoor&signature=ND6sT3jcMDNZg2jLlDKcoUZohQk=",
+        "questionsAnswersInfo": null,
+        "specialOffers": [],
+        "buildingImage": [
+          {
+            "url": "https://photos.zillowstatic.com/fp/b50170aa78c04b4f290a6b82d675ceaf-p_f.jpg",
+            "caption": "Finish Package IV Kitchen with quartz countertops, tile backsplash, and stainless steel appliances (Phase I)",
+            "__typename": "Photo"
+          }
+        ],
+        "localProtections": {
+          "level": "state",
+          "statePageUrl": "http://www.lgbtmap.org/equality_maps/profile_state/ca",
+          "protections": [
+            {
+              "covers": {
+                "genderIdentity": true,
+                "sexualOrientation": true,
+                "__typename": "covers"
+              },
+              "description": "Protection from being unfairly evicted, denied housing, or refused the ability to rent or buy housing.",
+              "type": "Housing",
+              "__typename": "protections"
+            },
+            {
+              "covers": {
+                "genderIdentity": true,
+                "sexualOrientation": true,
+                "__typename": "covers"
+              },
+              "description": "On June 15, 2020, the US Supreme Court ruled that employers subject to Title VII cannot hire, fire, or otherwise discriminate against employees based on their sexual orientation or gender identity.",
+              "type": "Employment",
+              "__typename": "protections"
+            },
+            {
+              "covers": {
+                "genderIdentity": true,
+                "sexualOrientation": true,
+                "__typename": "covers"
+              },
+              "description": "Protection from being unfairly refused services or entry to or from places accessible to the public (retail stores, restaurants, parks, hotels, etc).",
+              "type": "Public Accommodations",
+              "__typename": "protections"
+            }
+          ],
+          "__typename": "localProtections"
+        },
+        "regionIds": {
+          "city": 20330,
+          "__typename": "RegionIds"
+        }
+      },
+      "viewer": null,
+      "abTests": {
+        "VL_BDP_NEW_TAB": "CONTROL",
+        "RE_BDPHomeRecsModule": "CONTROL",
+        "__typename": "ABTests",
+        "VL_PPC_Link_Location": "HEADER",
+        "VL_WOW_BDP_DESKTOP": "WOW_BDP",
+        "VL_WOW_BDP_MWEB": "WOW_BDP",
+        "RR_REAL_TIME_MF_TOUR_SCHEDULING": "CONTROL",
+        "RR_MF_OFFICE_HOUR_TOURS": "ON",
+        "RR_RENTER_PROFILE_V2": "TEST",
+        "SI_RenterInfo": "TEST",
+        "VL_REMOVE_OFF_MARKET_LINKS": "REMOVE",
+        "RE_COVID_Tours": "REMOVE_TOUR",
+        "LOCATION_MODULE_VL": "LOCATION_MODULE",
+        "VL_BDP_3D": "ON",
+        "RE_SEO_Add_internal_links_from_HDPstoSRPs": "TEST"
+      }
+    },
+    "graphQLURL": {
+      "common": "https://www.zillow.com/graphql/",
+      "internal": "http://gql-int.del.zillow.local/"
+    }
+  },
+  "page": "/building",
+  "query": {
+    "fullPage": "false",
+    "lotId": "1001486398",
+    "defaultType": "For Sale"
+  },
+  "buildId": "4zzaZ7ueZHzhofKt-Vi_6",
+  "assetPrefix": "https://www.zillowstatic.com/s3/building-details",
+  "runtimeConfig": {
+    "assetPrefix": "https://www.zillowstatic.com/s3/building-details/",
+    "staticAssetPrefix": "https://www.zillowstatic.com/s3/building-details/"
+  },
+  "isFallback": false,
+  "customServer": true,
+  "gip": true,
+  "appGip": true
+}

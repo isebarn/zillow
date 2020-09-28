@@ -6,7 +6,7 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 from pprint import pprint
 
-engine = create_engine('postgresql://zillow:zillow123@localhost:5432/zillow', echo=False)
+engine = create_engine('postgresql://zillow:zillow123@192.168.1.35:5433/zillow', echo=False)
 Base = declarative_base()
 
 def read_file(filename):
@@ -36,9 +36,25 @@ class ZIP(Base):
 
   Id = Column('id', Integer, primary_key=True)
   Value = Column('value', String, unique=True)
+  RunKey = Column('run_key', Integer)
+
 
   def __init__(self, zip_code):
     self.Value = zip_code
+
+class Run(Base):
+  __tablename__ = 'run'
+
+  Id = Column('id', Integer, primary_key=True)
+  Run = Column('run', Integer)
+  Seconds = Column('seconds', Integer)
+
+  def __init__(self, run_key):
+    self.Run = run_key
+
+  def json(self):
+    data = json_object(self)
+    return data
 
 class Listing(Base):
   __tablename__ = 'listing'
@@ -91,6 +107,7 @@ class Listing(Base):
   OnWaterfront = Column('on_waterfront', Boolean)
   Spa = Column('spa', Boolean)
   Rent = Column('rent', Boolean)
+  Run = Column('run', Integer, ForeignKey('run.id'))
 
 
   def __init__(self, data):
@@ -140,8 +157,9 @@ class Listing(Base):
     self.Views = safe_int_cast(data['views'], 'views', self.Id)
     self.YearBuild = safe_int_cast(data['year_build'], 'year_build', self.Id)
     self.ZEstimate = safe_int_cast(data['z_estimate'], 'z_estimate', self.Id)
-    
+
     self.Rent = data['rent']
+    self.Run = data['run']
 
 
 Base.metadata.create_all(engine)
@@ -151,6 +169,24 @@ session = Session()
 
 class Operations:
 
+  def SaveRun():
+    max_run_key = session.query(ZIP).order_by(desc(ZIP.RunKey)).limit(1).one().RunKey
+    last_run_key = session.query(Run).order_by(desc(Run.Id)).limit(1).one().Run
+
+    new_run_key = last_run_key + 1
+
+    if max_run_key < new_run_key:
+      new_run_key = 1
+
+
+    run = Run(new_run_key)
+    session.add(run)
+    session.commit()
+    return run
+
+  def CommitAll():
+    session.commit()
+
   def SaveZIP(data):
     session.add(data)
     session.commit()
@@ -159,9 +195,12 @@ class Operations:
     return session.query(ZIP).all()
 
   def SaveListing(data):
-    if session.query(Listing.Id).filter_by(Id=data['_id']).scalar() == None:
-      session.add(Listing(data))
+    if session.query(Listing.Id).filter_by(Id=data['_id']).scalar() != None:
+      session.query(Listing).filter_by(Id=data['_id']).delete()
       session.commit()
+
+    session.add(Listing(data))
+    session.commit()
 
   def SaveError(data):
     session.add(Error(data))
@@ -172,3 +211,14 @@ class Operations:
     for zip_code in zip_codes:
       Operations.SaveZIP(zip_code)
 
+
+if __name__ == '__main__':
+  #Operations.init_db()
+  max_run_key = session.query(ZIP).order_by(desc(ZIP.RunKey)).limit(1).one().RunKey
+  last_run_key = session.query(Run).order_by(desc(Run.Id)).limit(1).one().Run
+  print(max_run_key)
+  print(last_run_key)
+  new_run_key = last_run_key + 1
+
+  if max_run_key < new_run_key:
+    new_run_key = 1

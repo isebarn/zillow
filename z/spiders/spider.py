@@ -15,7 +15,7 @@ from random import choice
 class RootSpider(scrapy.Spider):
   name = "root"
   search_url = 'https://www.zillow.com/homes/{}_rb/{}_p/'
-  rent_url = 'https://www.zillow.com/homes/{}_rb/?searchQueryState=%7B%22pagination%22%3A%7B%22currentPage%22%3A{}%7D%2C%22usersSearchTerm%22%3A%2294107%22%2C%22mapBounds%22%3A%7B%22west%22%3A-122.61161373974612%2C%22east%22%3A-122.2099261176758%2C%22south%22%3A37.59411242334494%2C%22north%22%3A37.81521727170439%7D%2C%22regionSelection%22%3A%5B%7B%22regionId%22%3A97562%2C%22regionType%22%3A7%7D%5D%2C%22isMapVisible%22%3Atrue%2C%22mapZoom%22%3A12%2C%22filterState%22%3A%7B%22pmf%22%3A%7B%22value%22%3Afalse%7D%2C%22fore%22%3A%7B%22value%22%3Afalse%7D%2C%22auc%22%3A%7B%22value%22%3Afalse%7D%2C%22nc%22%3A%7B%22value%22%3Afalse%7D%2C%22fr%22%3A%7B%22value%22%3Atrue%7D%2C%22fsbo%22%3A%7B%22value%22%3Afalse%7D%2C%22cmsn%22%3A%7B%22value%22%3Afalse%7D%2C%22pf%22%3A%7B%22value%22%3Afalse%7D%2C%22fsba%22%3A%7B%22value%22%3Afalse%7D%7D%2C%22isListVisible%22%3Atrue%7D'
+  rent_url = 'https://www.zillow.com/san-francisco-ca-{}/rentals/{}_p/'
   proxies_url = 'https://proxy.webshare.io/proxy/list/download/rbxxnxiqipaxnhyvlsclanwympqgntoguuuetzmg/-/http/port/domain/'
   listings = []
   errors = []
@@ -52,6 +52,8 @@ class RootSpider(scrapy.Spider):
     self.scrape_type = getattr(self,'scrape_type', 0)
     self.test_url = getattr(self,'test_url', None)
     self.zip_code = getattr(self,'zip_code', None)
+    self.start_time = time()
+    self.run = Operations.SaveRun()
 
     if self.test_url != None and self.zip_code != None:
       zip_code = next(x for x in zip_codes if x.Value == self.zip_code)
@@ -64,7 +66,7 @@ class RootSpider(scrapy.Spider):
 
 
     if self.scrape_type ==  0:
-      zip_codes = [x for x in zip_codes if x.Value == '94107']
+      zip_codes = [x for x in zip_codes if x.RunKey == self.run.Run]
       self.search_url = self.rent_url
 
     for _zip in zip_codes:
@@ -82,6 +84,19 @@ class RootSpider(scrapy.Spider):
 
     urls = response.xpath("//a[starts-with(@class,'list-card-link')]/@href").extract()
 
+    # Some listings from the list view have malformed URLS we find those that are okai
+    for url in [x for x in urls if '_zpid' in x]:
+      if  response.meta.get('zip') not in url:
+        continue
+
+      if 'https://www.zillow.com' not in url:
+        url = 'https://www.zillow.com' + url
+
+      yield scrapy.Request(url,
+        callback=self.parse_listing,
+        errback=self.errback,
+        meta={'zip': response.meta.get('zip'), 'proxy': self.proxy()})
+
     # Some listings from the list view have malformed URLS we find those that are bad
     # and request them and send them to get_better_url method
     for url in list(set([x for x in urls if '_zpid' not in x])):
@@ -94,7 +109,7 @@ class RootSpider(scrapy.Spider):
         meta={'zip': response.meta.get('zip'), 'proxy': self.proxy()})
 
     # if there is a next page, scrape it
-    next_page_enabled = response.xpath("//a[@rel='next']/@disabled").extract_first() == None
+    next_page_enabled = False#response.xpath("//a[@rel='next']/@disabled").extract_first() == None
     if next_page_enabled:
       url = response.xpath("//a[@rel='next']/@href").extract_first()
 
@@ -183,11 +198,18 @@ class RootSpider(scrapy.Spider):
   def spider_closed(self, spider):
     self.save_listings()
     self.save_errors()
+    self.run.Seconds = int(time() - self.start_time)
+    Operations.CommitAll()
 
   def get_fields(self, response):
     result = {}
 
-    result['_id'] = re.search(r'(.*?)_zpid', response.url).group(1).split('/')[-1]
+    try:
+      result['_id'] = int(re.search(r'(.*?)_zpid', response.url).group(1).split('/')[-1])
+
+    except Exception as e:
+      return
+
     result['rent'] = True if self.scrape_type == 0 else False
 
     result['scrape_date'] = date.today()
@@ -311,6 +333,7 @@ class RootSpider(scrapy.Spider):
       result['last_sale_sell_date'] = datetime.fromtimestamp(last_sale_sell_date/1000) if last_sale_sell_date != None else None
 
     result['agent'] = response.xpath("//span[@class='cf-listing-agent-display-name']/text()").extract_first('')
+    result['run'] = self.run.Id
     self.listings.append(result)
 
 
